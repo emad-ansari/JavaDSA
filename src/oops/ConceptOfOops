@@ -1,0 +1,9 @@
+what are classes => 1) class is just a logical construct/blue print or we can say a set of rule to make something that physically exist
+                    2)
+
+what are objects => 1) Object are instance of class
+                    2) Object are physical reality
+                    3) this is the thing that actually occupying space in memory
+                    4) eg. Human is class (which have properties like eye, legs, hand, ear, nose etc.. and have behaviour like eating food, walking, etc)
+                       and we all are the object of Human class (whenever a new baby is born a new object is created of class Human)
+                    5) Objects have some properties and behaviour
