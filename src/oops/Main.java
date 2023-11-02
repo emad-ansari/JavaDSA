@@ -33,21 +33,33 @@ public class Main {
 //        System.out.print("Remove last element: ");
 //        list.display();
 
-        DoublyLinkedList list1 = new DoublyLinkedList();
-        list1.insertFirst(10);
-        list1.insertFirst(20);
-        list1.insertFirst(30);
-        list1.insertFirst(40);
-        list1.insertFirst(50);
-        list1.display();
-        list1.insert(3, 100);
-        list1.display();
-        list1.insert(list1.length(), 17);
-        list1.display();
-        list1.remove(50);
-        list1.display();
+//        DoublyLinkedList list1 = new DoublyLinkedList();
+//        list1.insertFirst(10);
+//        list1.insertFirst(20);
+//        list1.insertFirst(30);
+//        list1.insertFirst(40);
+//        list1.insertFirst(50);
+//        list1.display();
+//        list1.insert(3, 100);
+//        list1.display();
+//        list1.insert(list1.length(), 17);
+//        list1.display();
+//        list1.remove(50);
+//        list1.display();
 
-
+        CircularLinkedList list2 = new CircularLinkedList();
+        list2.insertFirst(8);
+        list2.insertFirst(9);
+        list2.insertFirst(2);
+        list2.display();
+        list2.insert(9, 17);
+        list2.display();
+        list2.insert(8, 100);
+        list2.display();
+        list2.removeFirst();
+        list2.display();
+        list2.remove(9);
+        list2.display();
 
     }
 }
