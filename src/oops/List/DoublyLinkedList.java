@@ -1,4 +1,4 @@
-package oops;
+package oops.List;
 
 public class DoublyLinkedList {
     private Node head;

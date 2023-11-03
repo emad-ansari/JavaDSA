@@ -1,4 +1,4 @@
-package oops;
+package oops.List;
 
 public class CircularLinkedList {
     private Node head;
@@ -53,6 +53,10 @@ public class CircularLinkedList {
 
     public void remove(int key) {
         Node temp = head;
+        if (temp == null){
+            System.out.println("list is empty");
+            return;
+        }
         if(key == temp.val){
             // just called the removeFirst
             removeFirst();
@@ -70,6 +74,7 @@ public class CircularLinkedList {
             }
         }
         while(temp.next != head);
+        System.out.println("Value does not exist");
     }
 
     public void display(){

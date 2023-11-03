@@ -1,19 +1,28 @@
-package oops;
+package oops.List;
+
+import oops.List.CircularLinkedList;
 
 public class Main {
     public static void main(String[] args) {
-//        CustomLinkedList list = new CustomLinkedList();
-//        list.insertFirst(2);
-//        list.insertFirst(3);
-//        list.insertFirst(4);
-//        list.insertFirst(5);
-//        list.insertFirst(6);
+        CustomLinkedList list = new CustomLinkedList();
+        list.insertFirst(3);
+        list.insertFirst(3);
+        list.insertFirst(2);
+        list.insertFirst(1);
+        list.insertFirst(1);
+        list.display();
+        list.removeDuplicate();
+        list.display();
 //        list.insertLast(10);
 //        list.insertLast(12);
 //        list.insert(17, 3);
 //        list.insert(20, 1);
-//        list.insert(30, 0);
+//        list.display();
+//        System.out.println(list.find(list.get(0)));
+//        list.insertRec(2, 12, list.find(list.get(0)));
+//        list.display();
 //
+//        list.insert(30, 0);
 //        System.out.print("Before removing element: ");
 //        list.display();
 //
@@ -47,19 +56,19 @@ public class Main {
 //        list1.remove(50);
 //        list1.display();
 
-        CircularLinkedList list2 = new CircularLinkedList();
-        list2.insertFirst(8);
-        list2.insertFirst(9);
-        list2.insertFirst(2);
-        list2.display();
-        list2.insert(9, 17);
-        list2.display();
-        list2.insert(8, 100);
-        list2.display();
-        list2.removeFirst();
-        list2.display();
-        list2.remove(9);
-        list2.display();
+//        CircularLinkedList list2 = new CircularLinkedList();
+//        list2.insertFirst(8);
+//        list2.insertFirst(9);
+//        list2.insertFirst(2);
+//        list2.display();
+//        list2.insert(9, 17);
+//        list2.display();
+//        list2.insert(8, 100);
+//        list2.display();
+//        list2.removeFirst();
+//        list2.display();
+//        list2.remove(9);
+//        list2.display();
 
     }
 }

@@ -1,4 +1,4 @@
-package oops;
+package oops.List;
 
 public class CustomLinkedList {
     private Node head;
@@ -72,6 +72,24 @@ public class CustomLinkedList {
         }
         size++;
     }
+
+    public void insertRec(int index, int value, Node temp){
+        if (index == 0){
+            Node node = new Node(value);
+            node.next = head;
+            head = node;
+            size++;
+            return;
+        }
+        if (index == 1){
+            Node node = new Node(value);
+            node.next = temp.next;
+            temp.next = node;
+            size++;
+            return;
+        }
+        insertRec(index - 1, value, temp.next);
+    }
     private void removeFirst(){
         head = head.next;
         if(head == null){
@@ -117,6 +135,8 @@ public class CustomLinkedList {
         }
         size--;
     }
+
+
     public Node find(int target){
         Node node = head;
         while (node != null){
@@ -153,6 +173,65 @@ public class CustomLinkedList {
         }
         System.out.println("END");
 //        System.out.println(size);
+    }
+
+    // leetcode question
+
+    public void removeDuplicate(){
+        Node node = head;
+        while(node.next != null){
+            if(node.val == node.next.val){
+                node.next = node.next.next;
+            }
+            else {
+                node = node.next;
+            }
+        }
+    }
+    public static CustomLinkedList merge(CustomLinkedList list1, CustomLinkedList list2){
+        Node f = list1.head;
+        Node s = list2.head;
+        CustomLinkedList ans = new CustomLinkedList();
+        while (f != null && s != null){
+            if(f.val < s.val){
+                ans.insertLast(f.val);
+                f = f.next;
+
+            }
+            else {
+                ans.insertLast(s.val);
+                s = s.next;
+            }
+        }
+        while(f != null){
+            ans.insertLast(f.val);
+            f = f.next;
+        }
+        while (s != null){
+            ans.insertLast(s.val);
+            s = s.next;
+        }
+        return ans;
+    }
+
+    // find the length of the cycle
+
+
+
+    public static void main(String[] args) {
+        CustomLinkedList list1 = new CustomLinkedList();
+        CustomLinkedList list2 = new CustomLinkedList();
+
+        list1.insertLast(1);
+        list1.insertLast(2);
+        list1.insertLast(4);
+
+        list2.insertLast(1);
+        list2.insertLast(3);
+        list2.insertLast(4);
+
+        CustomLinkedList ans = merge(list1, list2);
+        ans.display();
     }
 
 
