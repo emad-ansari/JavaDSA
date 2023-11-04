@@ -188,6 +188,34 @@ public class CustomLinkedList {
             }
         }
     }
+//    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+//        ListNode f = list1;
+//        ListNode s = list2;
+//        ListNode ans = new ListNode();
+//        while (f != null && s != null){
+//            if(f.val < s.val){
+//                ans.insertLast(f.val);
+//                f = f.next;
+//
+//            }
+//            else {
+//                ans.insertLast(s.val);
+//                s = s.next;
+//            }
+//        }
+//        while(f != null){
+//            ans.insertLast(f.val);
+//            f = f.next;
+//        }
+//        while (s != null){
+//            ans.insertLast(s.val);
+//            s = s.next;
+//        }
+//        return ans;
+//
+//
+//
+//    }
     public static CustomLinkedList merge(CustomLinkedList list1, CustomLinkedList list2){
         Node f = list1.head;
         Node s = list2.head;
@@ -229,9 +257,9 @@ public class CustomLinkedList {
         list2.insertLast(1);
         list2.insertLast(3);
         list2.insertLast(4);
-
-        CustomLinkedList ans = merge(list1, list2);
-        ans.display();
+//
+//        CustomLinkedList ans = merge(list1, list2);
+//        ans.display();
     }
 
 
