@@ -1,7 +1,10 @@
 package practice.Leetcode;
 
+import java.util.List;
+
 public class MergeSortedList {
 
+//    Merge two list using merge sort
 
 //    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 //        ListNode f = list1;
@@ -15,6 +18,16 @@ public class MergeSortedList {
 //
 //
 //    }
+
+    private ListNode getMid(ListNode head){
+        ListNode f = head;
+        ListNode s = head;
+        while (f != null && f.next != null){
+            f = f.next.next;
+            s = s.next;
+        }
+        return s;
+    }
     public class ListNode {
       int val;
       ListNode next;

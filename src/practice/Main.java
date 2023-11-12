@@ -9,9 +9,10 @@ public class Main {
 //        insertionSort(arr);
 //        selectionSort(arr);
 //        cyclicSort(arr);
-        System.out.println(Arrays.toString(mergeSort(arr)));
-
-//        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(mergeSort(arr)));
+        bubbleSortRec(arr, 0, 0);
+//        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
     static void insertionSort(int[] arr){
         for (int i = 0; i < arr.length - 1; i++) {
@@ -71,7 +72,7 @@ public class Main {
     }
 
     static int[]  mergeSort(int[] arr){
-        if (arr.length == 1 || arr.length == 0){
+        if (arr.length == 1 ){
             return arr;
         }
         int mid = arr.length / 2;
@@ -111,5 +112,37 @@ public class Main {
             k++;
         }
         return ans;
+    }
+    static void bubbleSort(int[] arr){
+        for (int i = 0; i < arr.length - 1; i++) {
+            boolean  isSwap = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]){
+                    swap(arr, j, j + 1);
+                    isSwap  = true;
+                }
+            }
+            if (!isSwap){
+                break;
+            }
+
+        }
+    }
+
+    // Bubble sort with recursion
+    static void bubbleSortRec(int[] arr, int row, int col){
+        if (row > arr.length - 2) {
+            return;
+        }
+
+
+        if (col == arr.length - row -1){
+            col = 0;
+            row++;
+        }
+        if(arr[col] > arr[col + 1]){
+            swap(arr,col, col + 1);
+        }
+        bubbleSortRec(arr, row, col + 1);
     }
 }

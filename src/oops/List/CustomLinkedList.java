@@ -1,5 +1,7 @@
 package oops.List;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
+
 public class CustomLinkedList {
     private Node head;
     private Node tail;
@@ -135,8 +137,7 @@ public class CustomLinkedList {
         }
         size--;
     }
-
-
+    // this find function will return the node with node.val = target
     public Node find(int target){
         Node node = head;
         while (node != null){
@@ -242,8 +243,62 @@ public class CustomLinkedList {
         return ans;
     }
 
-    // find the length of the cycle
+    // sort the linked list via bubble sort with recursive approach.
+    public void bubbleSort(){
+        bubble(size -1 , 0);
+    }
+    private void bubble(int row, int col){
+        if (row == 0){
+            return;
+        }
+        if (col < row){
+            Node first = getNode(col);
+            Node second = getNode(col + 1);
+            if (first.val > second.val){
+                // here we need to swap according to three cases
+                if (first == head){
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+                else if (second == tail){
+                    Node prev = getNode(col -1);
+                    prev.next = second;
+                    second.next = first;
+                    first.next = null;
+                    tail = first;
+                }
+                else {
+                    Node prev = getNode(col - 1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubble(row, col + 1);
+        }
+        else{
+            bubble(row - 1, 0);
+        }
+    }
 
+    private Node getNode(int index){
+        if(index > size){
+            throw new ArithmeticException("Index out of bound");
+        }
+        if (index == 0){
+            return head;
+        }
+        if(index == size){
+            return tail;
+        }
+        Node temp = head;
+        while (index != 0){
+            temp = temp.next;
+            index--;
+        }
+        return temp;
+    }
 
 
     public static void main(String[] args) {
@@ -260,7 +315,15 @@ public class CustomLinkedList {
 //
 //        CustomLinkedList ans = merge(list1, list2);
 //        ans.display();
+        CustomLinkedList list = new CustomLinkedList();
+        for (int i = 7; i > 0; i--) {
+            list.insertLast(i);
+        }
+        System.out.print("Before sorting: ");
+        list.display();
+        list.bubbleSort();
+        System.out.print("After sorting:  ");
+        list.display();
+
     }
-
-
 }

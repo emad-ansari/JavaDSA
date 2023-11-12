@@ -2,6 +2,8 @@ package oops.List;
 //https://leetcode.com/problems/reorder-list/
 // solved
 public class ReorderList {
+
+    // My method
     public void reorderList(ListNode head) {
         ListNode temp = head;
         int length = 0;
@@ -33,6 +35,60 @@ public class ReorderList {
             position++;
         }
 
+    }
+
+    // Reorder the list by kunal method
+    // Asked by Google, Facebook
+    public void reorder(ListNode head){
+        if (head == null || head.next == null){
+            return;
+        }
+        ListNode mid = findMiddleNode(head);
+        ListNode headSecond = reverse(mid);
+        ListNode headFirst = head;
+        while (headFirst != null && headSecond != null){
+            ListNode temp = headFirst.next;
+            headFirst.next  = headSecond;
+            headFirst = temp;
+
+            temp = headSecond.next;
+            headSecond.next = headFirst;
+            headSecond = temp;
+        }
+        // At the end headFirst will be the last node so headFirst.next should point to null if it is not pointing to null
+        if (headFirst != null ){
+            headFirst.next = null;
+        }
+
+    }
+    private ListNode findMiddleNode(ListNode head){
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
+    public ListNode reverse(ListNode head){
+        if (head == null){
+            return head;
+        }
+        ListNode prev = null;
+        ListNode present = head;
+        ListNode next = present.next;
+
+        while (present != null){
+            present.next = prev;
+            prev = present;
+            present = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+        // At the end when while loop break, prev will be head of the reverse linked list, so return prev
+        return prev;
     }
 
 
