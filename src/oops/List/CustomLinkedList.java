@@ -1,6 +1,6 @@
 package oops.List;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
+
 
 public class CustomLinkedList {
     private Node head;
@@ -324,6 +324,7 @@ public class CustomLinkedList {
         list.bubbleSort();
         System.out.print("After sorting:  ");
         list.display();
+
 
     }
 }
