@@ -1,5 +1,7 @@
 package practice.Leetcode;
 //https://leetcode.com/problems/number-of-digit-one/
+
+//not submitted at leetcode
 public class NumberOfDigitOne {
     public static void main(String[] args) {
         System.out.println(countDigitOne(30000000));
