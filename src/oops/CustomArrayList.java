@@ -8,6 +8,7 @@ public class CustomArrayList {
     private int size = 0;
     public int[] arr;
     public CustomArrayList(){
+
         arr = new int[DEFAULT_CAPACITY];
     }
     public void add(int number){
