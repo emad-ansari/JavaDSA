@@ -2,7 +2,7 @@ package practice.exam;
 
 public class FibonacciWithRecursion {
     public static void main(String[] args) {
-        fibonacci(7, 0, 0, 1);
+        fibonacci(50, 0, 0, 1);
 
     }
     // solve the fibonacci with recursion
