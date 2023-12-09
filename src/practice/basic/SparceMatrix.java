@@ -12,7 +12,7 @@ public class SparceMatrix {
     }
 
 
-    // represent a matrix in form of sparce matrix
+    // represent a matrix in form of sparse matrix
 
     static void sparceMatrix(int[][] matrix){
         int size = 0;
