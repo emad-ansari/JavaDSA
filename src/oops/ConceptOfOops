@@ -51,7 +51,7 @@ Types of Constructor : Constructors are three type
                        2) parameterized constructor
                        3) copy constructor
 
-1. Default Constructor in Java :- A constructor that has no parameters is known as default the constructor. A default constructor is invisible
+1. Default Constructor in Java :- A constructor that has no parameters is known as default the constructor. A default constructor is invisible.
 
 2. Parameterized Constructor in Java :- A constructor that has parameters is known as parameterized constructor. If we want to initialize fields
                                         of the class with our own values, then use a parameterized constructor.
@@ -170,6 +170,209 @@ Important methods of StringBuffer class =>
   7) delete(int startIndex, int endIndex) -> It is used to delete the string from specified startIndex and endIndex.
   8) substring(int beginIndex) -> It is used to return the substring from the specified beginIndex.
 
-Wrapper Class  in java => A Wrapper class in Java is a class whose object wraps or contains primitive data types. When we create an object to a wrapper class, it contains a
-                          field and in this field, we can store primitive data types. In other words, we can wrap a primitive value into a wrapper class object. Let’s check
-                          on the wrapper classes in Java with examples.
+
+String tokenizer in java => The java.util.StringTokenizer class allows you to break a String into tokens. It is simple way to break a String.
+                            It is a legacy class of Java. The String Tokenizer class allows an application to break strings into tokens.
+                            It implements the Enumeration interface. This class is used for parsing data
+
+Constructors of the StringTokenizer Class =>
+                            1) StringTokenizer(String str) ->    It creates StringTokenizer with specified string.
+                            2) StringTokenizer(String str, String delim) -> It creates StringTokenizer with specified string and delimiter.
+
+ Methods Of StringTokenizer Class =>
+                            1) countTokens()  -> Returns the total number of tokens present
+                            2) hasMoreToken() -> Tests if tokens are present for the StringTokenizer’s string
+                            3) nextToken()    -> Returns the next token from the given StringTokenizer.
+
+Wrapper Class  in java =>   The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive
+                            autoboxing and unboxing feature convert primitives into objects and objects into primitives automatically.
+                            The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+
+Use of Wrapper classes in Java => Java is an object-oriented programming language, so we need to deal with objects many times like in Collections, Serialization,
+                                  Synchronization, etc. Let us see the different scenarios, where we need to use the wrapper classes.
+
+1) Change the value in Method: Java supports only call by value. So, if we pass a primitive value, it will not change the original value.
+   But, if we convert the primitive value in an object, it will change the original value.
+2) Serialization: We need to convert the objects into streams to perform the serialization.
+   If we have a primitive value, we can convert it in objects through the wrapper classes
+
+PROBLEM STATEMENT : Write programs to convert primitive data types to object and vice-versa
+1) Primitive to object :- //Java program to convert primitive into objects
+                          //Autoboxing example of int to Integer
+                          public class WrapperExample1{
+                              public static void main(String args[]){
+                                  //Converting int into Integer
+                                  int a = 20;
+                                  Integer i = Integer.valueOf(a);//converting int into Integer explicitly
+                                  Integer j = a;//autoboxing, now compiler will write Integer.valueOf(a) internally
+                                  System.out.println(a+" "+i+" "+j);
+                              }
+                          }
+
+2) object to primitive => //Java program to convert object into primitives
+                          //Unboxing example of Integer to int
+                          public class WrapperExample2{
+                              public static void main(String args[]){
+                                  //Converting Integer to int
+                                  Integer a = new Integer(3);
+                                  int i = a.intValue();//converting Integer to int explicitly
+                                  int j = a;//unboxing, now compiler will write a.intValue() internally
+
+                                  System.out.println(a+" "+i+" "+j);
+                              }
+                          }
+
+
+
+Java API Packages  => A java package is a group of similar types of classes, interfaces and sub-packages.
+                      Package in java can be categorized in two form, built-in package and user-defined package.
+                      There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.
+                      -> The package keyword is used to create a package in java.
+                      //save as Simple.java
+                      package myPackage;
+                      public class Simple{
+                           public static void main(String args[]){
+                              System.out.println("Welcome to java api package");
+                           }
+                      }
+
+Advantage of Java Package =>
+                    1) Java package is used to categorize the classes and interfaces so that they can be easily maintained.
+                    2) Java package provides access protection.
+                    3) Java package removes naming collision.
+
+How to access package from another package?
+    There are three ways to access the package from outside the package.
+
+1) import package.*;
+2) import package.classname;
+3) fully qualified name.
+
+1) Using packageName.* =>  If you use package.* then all the classes and interfaces of this package will be accessible but not subpackages.
+                           The import keyword is used to make the classes and interface of another package accessible to the current package.
+                        EXAMPLE:-
+                        first package
+                        //save by A.java
+                        package pack;
+                        public class A{
+                            public void msg(){System.out.println("Hello");}
+                        }
+
+                        second package
+                        //save by B.java
+                        package myPackage;
+                        import pack.*;
+                        class B{
+                          public static void main(String args[]){
+                           A obj = new A();
+                           obj.msg();
+                          }
+                        }
+
+
+2) Using packageName.classname =>  If you import package.classname then only declared class of this package will be accessible.
+
+                         EXAMPLE:-
+                        first package
+
+                        //save by A.java
+                        package pack;
+                        public class A{
+                            public void msg(){System.out.println("Hello");}
+                        }
+
+                        second package
+                        //save by B.java
+                        package myPackage;
+                        import pack.A;
+                        class B{
+                          public static void main(String args[]){
+                           A obj = new A();
+                           obj.msg();
+                          }
+                        }
+
+3) Using fully qualified name => If you use fully qualified name then only declared class of this package will be accessible.
+                                 Now there is no need to import. But you need to use fully qualified name every time when you are accessing the class or interface
+
+                         EXAMPLE:-
+                        first package
+
+                        //save by A.java
+                        package pack;
+                        public class A{
+                            public void msg(){System.out.println("Hello");}
+                        }
+
+                        second package
+                        //save by B.java
+                        package myPackage;
+
+                        class B{
+                          public static void main(String args[]){
+                           pack.A obj = new A(); // using fully qualified name
+                           obj.msg();
+                          }
+                        }
+
+
+Inheritance in java =>  Java, Inheritance is an important pillar of OOP(Object-Oriented Programming).
+                        It is the mechanism in Java by which one class is allowed to inherit the features(fields and methods) of another class.
+                        The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit
+                        from an existing class, you can reuse methods and fields of the parent class. Moreover, you can add new methods and fields in your current class also.
+
+Keyword used for inheritance: - "extends"
+
+
+
+// Java Program to illustrate Inheritance (concise)
+
+import java.io.*;
+
+// Base or Super Class
+class Employee {
+    int salary = 60000;
+}
+
+// Inherited or Sub Class
+class Engineer extends Employee {
+    int benefits = 10000;
+}
+
+// Driver Class
+class Driver {
+    public static void main(String args[])
+    {
+        Engineer E1 = new Engineer();
+        System.out.println("Salary : " + E1.salary + "\nBenefits : " + E1.benefits);
+    }
+}
+
+
+Java Inheritance Types =>
+Below are the different types of inheritance which are supported by Java.
+
+1) Single Inheritance
+2) Multilevel Inheritance
+3) Hierarchical Inheritance
+4) Multiple Inheritance // not supported in java using (but can be achieve using interfaces)
+5) Hybrid Inheritance
+
+Advantages of Inheritance in java =>
+1) Code Re-usability: The code written in the Superclass is common to all subclasses. Child classes can directly use the parent class code.
+2) Method Overriding: Method Overriding is achievable only through Inheritance. It is one of the ways by which Java achieves Run Time Polymorphism.
+3) Abstraction: The concept of abstract where we do not have to provide all details is achieved through inheritance. Abstraction only shows the functionality to the user
+
+
+"final" Keyword in Java => final keyword is used in different contexts. First of all, final is a non-access modifier applicable only to a variable, a method, or a class.
+                           The following are different contexts where final is used.
+
+                           Final variable -> to create constant variable
+                           Final Methods  -> Prevent method overriding
+                           Final Class    -> to prevent Inheritance
+                           
+
+
+
+
+

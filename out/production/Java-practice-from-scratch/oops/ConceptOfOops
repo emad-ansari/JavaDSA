@@ -51,7 +51,7 @@ Types of Constructor : Constructors are three type
                        2) parameterized constructor
                        3) copy constructor
 
-1. Default Constructor in Java :- A constructor that has no parameters is known as default the constructor. A default constructor is invisible
+1. Default Constructor in Java :- A constructor that has no parameters is known as default the constructor. A default constructor is invisible.
 
 2. Parameterized Constructor in Java :- A constructor that has parameters is known as parameterized constructor. If we want to initialize fields
                                         of the class with our own values, then use a parameterized constructor.
@@ -170,6 +170,16 @@ Important methods of StringBuffer class =>
   7) delete(int startIndex, int endIndex) -> It is used to delete the string from specified startIndex and endIndex.
   8) substring(int beginIndex) -> It is used to return the substring from the specified beginIndex.
 
+
+String tokenizer in java => The java.util.StringTokenizer class allows you to break a String into tokens. It is simple way to break a String. It is a legacy class of Java.
+Constructors of the StringTokenizer Class :::
+                                            1) StringTokenizer(String str) ->    It creates StringTokenizer with specified string.
+                                            2) StringTokenizer(String str, String delim) -> It creates StringTokenizer with specified string and delimiter.
+                                            3)
+
+
 Wrapper Class  in java => A Wrapper class in Java is a class whose object wraps or contains primitive data types. When we create an object to a wrapper class, it contains a
                           field and in this field, we can store primitive data types. In other words, we can wrap a primitive value into a wrapper class object. Let’s check
                           on the wrapper classes in Java with examples.
+
+
