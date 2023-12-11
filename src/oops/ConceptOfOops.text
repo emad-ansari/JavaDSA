@@ -44,7 +44,7 @@ Constructors => Constructors are special type of function in java which have no 
                 2) It has no return type
                 3) Name of constructor is the same as className
                 4) constructor are use to initialize the objects and variables
-                5) when no constructor is explicitly provided in class java compiler will automatically call a default constructor
+                5) when no constructor is explicitly provided in class java compiler will automatically create a default constructor
 
 Types of Constructor : Constructors are three type
                        1) default constructor
@@ -105,7 +105,7 @@ class Test {
 
 -> The static keyword belongs to the class than an instance of the class.
  Characteristics of static keyword:-
- 1) Accessible without object instantiation:- Static members can be accessed without  creating an object of a class
+ 1) Accessible without object instantiation:- Static members can be accessed without creating an object of a class.
  2) Associated with class, not objects:-  Static members are associated with the class, not with individual objects. This means that changes
     to a static member are reflected in all instances of the class,
  3) Cannot access non-static members:- Static methods and variables cannot access non-static members of a class, as they are not associated with any
@@ -370,7 +370,304 @@ Advantages of Inheritance in java =>
                            Final variable -> to create constant variable
                            Final Methods  -> Prevent method overriding
                            Final Class    -> to prevent Inheritance
-                           
+
+Example of final variable =>
+class Bike9{
+     final int speedLimit=90;//final variable
+     void run(){
+        speedLimit=400;  // compile time error
+     }
+    public static void main(String args[]){
+         Bike9 obj=new  Bike9();
+         obj.run();
+    }
+}//end of class
+
+
+Example of final method =>
+class Bike{
+  final void run(){System.out.println("running");}
+}
+
+class Honda extends Bike{
+   void run(){  // can't override final method hence give compile time error
+        System.out.println("running safely with 100kmph");
+   }
+
+   public static void main(String args[]){
+        Honda honda= new Honda();
+        honda.run();
+   }
+}
+
+
+Example of final class =>
+
+final class Bike{}
+
+class Honda1 extends Bike{  // can't inherit the final class hence it will give compile time error.
+  void run(){System.out.println("running safely with 100kmph");}
+
+  public static void main(String args[]){
+      Honda1 honda= new Honda1();
+      honda.run();
+  }
+}
+
+QUESTION(1): Is final method inherited?
+ANS:- Yes, final method is inherited but you cannot override it.
+
+QUESTION(2): Can we initialize blank final variable?
+ANS:-  Yes, but only in constructor. For example:
+class Bike10{
+  final int speedlimit;//blank final variable
+
+  Bike10(){
+      speedlimit=70;
+      System.out.println(speedlimit);
+  }
+
+  public static void main(String args[]){
+    new Bike10();
+ }
+}
+
+"Super" Keyword in Java => The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+                           Whenever you create the instance of subclass, an instance of parent class is created implicitly which is
+                           referred by super reference variable.
+
+Usage of Java super Keyword =>
+                            1) super can be used to refer immediate parent class instance variable.
+                            2) super can be used to invoke immediate parent class method.
+                            3) super() can be used to invoke immediate parent class constructor.
+
+Example of first point :- class Animal{
+                            String color="white";
+                          }
+                          class Dog extends Animal{
+                            String color="black";
+                            void printColor(){
+                                System.out.println(color);//prints color of Dog class
+                                System.out.println(super.color);//prints color of Animal class
+                            }
+                          }
+                          class TestSuper1{
+                            public static void main(String args[]){
+                            Dog d=new Dog();
+                            d.printColor();
+                          }}
+
+
+Example of second point:- class Animal{
+                              void eat(){System.out.println("eating...");}
+                          }
+                          class Dog extends Animal{
+                              void eat(){System.out.println("eating bread...");}
+                              void bark(){System.out.println("barking...");}
+                              void work(){
+                              super.eat();
+                              bark();
+
+                          }
+
+
+Example of third point:- class Animal{
+                            Animal(){System.out.println("animal is created");}
+                         }
+                         class Dog extends Animal{
+                             Dog(){
+                             super();  // this will call the constructor of parent class which is "Animal"
+                             System.out.println("dog is created");
+                         }
+
+Method Overriding => If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+                    In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class,
+                    it is known as method overriding. It is also called run time polymorphism or dynamic binding.
+
+Rules for Java Method Overriding =>
+    1) The method must have the same name as in the parent class
+    2) The method must have the same parameter as in the parent class.
+    3) There must be an IS-A relationship (inheritance).
+
+
+QUESTION :- Can we override static method?
+ANS:- No, a static method cannot be overridden.
+
+
+Difference Between Method Overloading and Method Overriding in Java =>
+
+                Method Overloading                                             Method Overriding
+     1) Method overloading is a compile-time polymorphism.              1) Method overriding is a run-time polymorphism.
+     2) Method overloading may or may not require inheritance.          2) Method overriding always needs inheritance
+     3) In method overloading, methods must have the same               3) In method overriding, methods must have the same name and same signature.
+        name and different signatures.
+     4) Static binding is being used for overloaded methods.            4) Dynamic binding is being used for overriding methods.
+
+Abstraction in Java(pillar of OOps) => Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+                                       Another way, it shows only essential things to the user and hides the internal details,
+                                       for example, sending SMS where you type the text and send the message. You don't know the internal
+                                       processing about the message delivery.
+
+
+Abstract class in Java => A class which is declared as abstract is known as an abstract class. It can have abstract and non-abstract methods.
+                          -> It needs to be extended
+                          -> Abstract method must be overridden.
+                          -> Abstract classes cannot be instantiated.
+
+
+
+Interface in Java => An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+                     The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body.
+                     It is used to achieve abstraction and multiple inheritance in Java.
+                     -> we can not create constructor of interface
+
+Why use Java interface?
+    1) It is used to achieve abstraction.
+    2) By interface, we can support the functionality of multiple inheritance.
+    3) It can be used to achieve loose coupling.
+
+
+Java Inner Classes (Nested Classes) =>
+           Java inner class or nested class is a class that is declared inside the class or interface.
+           We use inner classes to logically group classes and interfaces in one place to be more readable and maintainable.
+           Additionally, it can access all the members of the outer class, including private data members and methods.
+
+
+
+
+Exception Handling in java => An exception is an event that disrupts the normal flow of program. Exception handling is a
+                              mechanism to handle the run time errors such as classNotFound , I/O, SQL remote etc.
+
+Error verses Exception =>
+
+               ERROR                                           EXCEPTION
+  1) It is impossible to recover from error                    1) It is possible to recover form exception
+  2) Error are unchecked type                                  2) It can be checked or unchecked
+  3) Error happens at run time                                 3) Exception happens at compile time & run time
+  4) It is Caused by the environment on which                  4) It is caused by application
+     application is running
+
+
+Exception Hierarchy =>  The java.lang.Throwable class is the root class of Java Exception hierarchy inherited by two subclasses: Exception and Error.
+                        The hierarchy of Java Exception classes is given below
+
+                                           Objects
+                                             |
+                                          Throwable
+                                             |
+                             ------------------------------------------
+                             |                                        |
+                         Exception                                   Errors
+                           |                                           |
+         -------------------------------------                 ----------------------------------------
+         |                                    |                |                                      |
+      Checked Exception             Unchecked Exception     virtual Machine error                Assertion error
+
+
+
+Difference between Checked Exception and  Unchecked Exception :-
+
+Checked Exception => 1) An exception that is checked by the compiler at compile time
+                     2) These exception cannot be simply ignored, programmer should handle these exception
+                     3) eg. I/O exception
+
+Unchecked Exception => 1) An exception that occurs at time of program execution.
+                       2) These are also called Run-time exception.
+                       3) Runtime exception are ignored at time of compilation
+                       4) eg. Array out of bound exception
+                       5) These are built in exception in java
+
+
+Basic example format of exception ->
+
+class Exception {
+    public static void main(String[] args){
+        try {
+            //code that may raise exception.
+        }
+        catch(Exception e){
+            //catch block is called exception handler.
+            // when an exception is throw from try block it is catch by the suitable catch block and now whole flow of program is controlled by this block;
+        }
+    }
+}
+
+
+Some built in exception in java =>
+    1) ArithmeticException
+    2) ArrayIndexOutOfBoundException
+    3) ClassNotFoundException
+    4) IOException
+    5) InterruptException
+    6) NoSuchMethodException
+    7) RunTimeException
+    8) NullPointerException
+
+
+ Difference between throw and throws =>
+  throw :- 1) Used to explicitly throw an exception
+           2) checked exception can not be propagated using throw only
+           3) followed by an instance
+           4) used within a method
+           5) can not throw multiple exception
+
+
+  throws :- 1) used to declare an exception
+            2) checked exception can be propagated
+            3) followed by class
+            4) used within a method signature
+            5) can declare multiple exception
+
+
+
+ USER DEFINED EXCEPTION => some time built-in exception of java is not good to use for a specific scenario so we define a custom
+                           exception with a proper message so that we can handle that exception
+                           --> custom exception is defined by extends Exception class in java
+                           --> eg . suppose we define a age validation function to check that age is not less than zero if it is zero then we can define a
+                           custom exception for this which will throw AgeLessThanZeroException if age is less than zero
+
+
+Thread =>  Before introducing the thread concept, we were unable to run more than one task in parallel.
+           It was a drawback, and to remove that drawback, Thread Concept was introduced.
+           A Thread is a very light-weighted process, or we can say the smallest part of the process that allows a program
+           to operate more efficiently by running multiple tasks simultaneously.
+
+           Another benefit of using thread is that if a thread gets an exception or an error at the time of its execution,
+           it doesn't affect the execution of the other threads. All the threads share a common memory and have their own stack,
+           local variables and program counter When multiple threads are executed in parallel at the same time, this process is
+           known as Multithreading.
+
+Thread life cycle =>
+ 1) New :- instance of thread is created which is not yet started by invoking start()
+ 2) Runnable :- After invocation of start
+
+
+
+
+ Thread Priority => Each thread has a priority. Priorities are represented by a number between 1 and 10.
+                    In most cases, the thread scheduler schedules the threads according to their priority (known as preemptive scheduling).
+                    But it is not guaranteed because it depends on JVM.
+                    --> a Java programmer can also assign the priorities of a thread explicitly in a Java program.
+
+
+Synchronization in Java => Synchronization in Java is the capability to control the access of multiple threads to any shared resource.
+                           Java Synchronization is better option where we want to allow only one thread to access the shared resource.
+
+Why use Synchronization? =>
+         The synchronization is mainly used to
+         To prevent thread interference.
+        To prevent consistency problem.
+
+
+Types of Synchronization => 1) Process Synchronization
+                            2) Thread Synchronization
+
+
+
+
+
+
+
 
 
 
