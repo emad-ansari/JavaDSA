@@ -24,6 +24,12 @@ public class FibonacciWithRecursion {
         fibonacci(n - 1, nextTerm, a, b);
     }
 
+    static void binarySearch(int[] arr, int target){
+        int start = 0;
+        
+
+    }
+
 
 
 
