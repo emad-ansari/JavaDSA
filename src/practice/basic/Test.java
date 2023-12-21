@@ -5,22 +5,28 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] arr = new int[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                arr[i][j] = sc.nextInt();
-            }
-        }
-       for (int[] row: arr){
-           for (int item: row){
-               System.out.println(item + " ");
-           }
-       }
-
-
-        System.out.println(fun(95));
-
+       //  Scanner sc = new Scanner(System.in);
+       //  int[][] arr = new int[3][3];
+       //  for (int i = 0; i < 3; i++) {
+       //      for (int j = 0; j < 3; j++) {
+       //          arr[i][j] = sc.nextInt();
+       //      }
+       //  }
+       // for (int[] row: arr){
+       //     for (int item: row){
+       //         System.out.println(item + " ");
+       //     }
+       // }
+       //
+       //
+       //  System.out.println(fun(95));
+       int[][] matrix = {
+           {1, 2, 3},
+           {4, 5, 6},
+           {7, 8, 9}
+       };
+       System.out.println(Arrays.toString(serachIn2D(matrix, 8)));
+       
     }
     static int fun(int n){
         if (n > 100){
@@ -31,6 +37,14 @@ public class Test {
         }
     }
 
-
-
+    static int[] serachIn2D(int[][] matrix, int target){
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[0].length; j++){
+                if (matrix[i][j] == target){
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{-1, -1};
+    }
 }
