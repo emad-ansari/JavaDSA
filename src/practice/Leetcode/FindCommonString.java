@@ -1,8 +1,6 @@
 package practice.Leetcode;
 
-import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Objects;
+
 
 //https://leetcode.com/problems/minimum-index-sum-of-two-lists/description/
 public class FindCommonString {
