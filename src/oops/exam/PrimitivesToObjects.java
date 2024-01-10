@@ -1,7 +1,5 @@
 package oops.exam;
 
-
-
 public class PrimitivesToObjects {
     public static void main(String[] args) {
         Integer a = 10;

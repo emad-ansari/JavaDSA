@@ -216,7 +216,7 @@ Constructors of the StringTokenizer Class =>
                             1) StringTokenizer(String str) ->    It creates StringTokenizer with specified string.
                             2) StringTokenizer(String str, String delim) -> It creates StringTokenizer with specified string and delimiter.
 
- Methods Of StringTokenizer Class =>
+Methods Of StringTokenizer Class =>
                             1) countTokens()  -> Returns the total number of tokens present
                             2) hasMoreToken() -> Tests if tokens are present for the StringTokenizer’s string
                             3) nextToken()    -> Returns the next token from the given StringTokenizer.
@@ -266,12 +266,12 @@ Java API Packages  => A java package is a group of similar types of classes, int
                       There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.
                       -> The package keyword is used to create a package in java.
                       //save as Simple.java
-                      package myPackage;
-                      public class Simple{
-                           public static void main(String args[]){
-                              System.out.println("Welcome to java api package");
-                           }
-                      }
+                    package myPackage;
+                    public class Simple{
+                        public static void main(String args[]){
+                            System.out.println("Welcome to java api package");
+                        }
+                    }
 
 Advantage of Java Package =>
                     1) Java package is used to categorize the classes and interfaces so that they can be easily maintained.
