@@ -1,6 +1,5 @@
 package oops.interfaces;
 
-import practice.exam.SumOfDigitUsingTailRecursion;
 
 public class Car implements InterfaceExample{
 

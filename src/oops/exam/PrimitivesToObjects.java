@@ -1,7 +1,5 @@
 package oops.exam;
 
-import oops.interfaces.InterfaceExample;
-
 public class PrimitivesToObjects {
     public static void main(String[] args) {
         Integer a = 10;

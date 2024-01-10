@@ -1,13 +1,15 @@
 About the Parameters Passed in Java =>  
            --> The fundamental concept for passing the parameters in modern programming languages is passing by value and passing by reference. 
-               But, in Java, the pass by reference concept is degraded. It supports only the pass by value concept.
+               But, in Java, the pass by reference concept is degraded.It supports only the pass by value concept. 
 
            --> The primitive variables hold the actual values, whereas the non-primitive variables hold the reference variable. 
                However, both variables use stack memory to store the values. See more about data types in Java.
 
            --> In Java, during the method invokation, a copy of each argument is created then passed to the method.
 
-           --> In the case of primitive data types, it copies the value inside stack memory then pass it to the method. In the case of non-primitive data types, it points a reference in stack memory to actual data, which occurs in a heap. When we pass an object, it will copy a reference from the stack memory and pass it to the callee method.
+           --> In the case of primitive data types, it copies the value inside stack memory then pass it to the method.
+               In the case of non-primitive data types, it points a reference in stack memory to actual data, which occurs in a heap. 
+               When we pass an object, it will copy a reference from the stack memory and pass it to the called method.
 
 What is Data Structure => A data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.
                           A data structure is not only used for organizing the data. It is also used for processing, retrieving, and storing data. 
@@ -25,7 +27,7 @@ Linear data structure :- Data structure in which data elements are arranged sequ
 Static data structure :- Static data structure has a fixed memory size. It is easier to access the elements in a static data structure. 
                          An example of this data structure is an array.
 Dynamic data structure:- In dynamic data structure, the size is not fixed. It can be randomly updated during the runtime which may be considered efficient concerning the memory (space) complexity of the code. 
-                        Examples of this data structure are queue, stack, etc.                  
+                         Examples of this data structure are queue, stack, etc.                  
 
 
 Non-linear data structure :- Data structures where data elements are not placed sequentially or linearly are called non-linear data structures. In a non-linear data structure, 
@@ -33,24 +35,15 @@ Non-linear data structure :- Data structures where data elements are not placed 
 
 
 
-                            
-
-
-
-
-
-
-
-
-what are classes => 1) class is just a logical construct/blue print or we can say a set of rule to make something that physically exist
-                    2)
+what are classes => 1) class is just a logical construct/blue print or we can say a set of rule to make something that physically exist.
+                    2) classes have some properties and behaviour.
 
 what are objects => 1) Object are instance of class
                     2) Object are physical reality
                     3) this is the thing that actually occupying space in memory
                     4) eg. Human is class (which have properties like eye, legs, hand, ear, nose etc.. and have behaviour like eating food, walking, etc)
                        and we all are the object of Human class (whenever a new baby is born a new object is created of class Human)
-                    5) Objects have some properties and behaviour
+                    
 
 
 Access specifier/Modifier => in Java, Access modifiers help to restrict the scope of a class, constructor, variable,
@@ -223,7 +216,7 @@ Constructors of the StringTokenizer Class =>
                             1) StringTokenizer(String str) ->    It creates StringTokenizer with specified string.
                             2) StringTokenizer(String str, String delim) -> It creates StringTokenizer with specified string and delimiter.
 
- Methods Of StringTokenizer Class =>
+Methods Of StringTokenizer Class =>
                             1) countTokens()  -> Returns the total number of tokens present
                             2) hasMoreToken() -> Tests if tokens are present for the StringTokenizer’s string
                             3) nextToken()    -> Returns the next token from the given StringTokenizer.
@@ -273,12 +266,12 @@ Java API Packages  => A java package is a group of similar types of classes, int
                       There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.
                       -> The package keyword is used to create a package in java.
                       //save as Simple.java
-                      package myPackage;
-                      public class Simple{
-                           public static void main(String args[]){
-                              System.out.println("Welcome to java api package");
-                           }
-                      }
+                    package myPackage;
+                    public class Simple{
+                        public static void main(String args[]){
+                            System.out.println("Welcome to java api package");
+                        }
+                    }
 
 Advantage of Java Package =>
                     1) Java package is used to categorize the classes and interfaces so that they can be easily maintained.

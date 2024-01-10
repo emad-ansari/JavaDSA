@@ -1,0 +1,37 @@
+
+In Java, byte streams and character streams are two fundamental types of I/O streams used for reading and writing data.
+They are categorized based on the type of data they handle: bytes or characters.
+
+Byte Streams =>  Byte streams, represented by classes in the java.io package, are used for input and output of raw binary data. They handle data in the form of bytes (8 bits).
+                 Byte streams are suitable for all kinds of I/O, but they are especially useful for handling binary data, like images, audio files, or any other non-text data.
+
+1) InputStream and OutputStream: These are the abstract base classes for reading from and writing to byte streams, respectively.
+
+2) FileInputStream and FileOutputStream: Used for reading and writing binary data from and to files.
+
+3) ByteArrayInputStream and ByteArrayOutputStream: Handle input/output from/to byte arrays in memory.
+
+
+Character Streams => Character streams, also represented by classes in the java.io package, are designed
+                     for handling character data. They handle data in the form of Unicode characters,
+                     providing a higher-level abstraction compared to byte streams. Character streams are
+                     suitable for reading and writing text files.
+
+
+
+1) Reader and Writer: These are the abstract base classes for reading from and writing to character streams, respectively.
+
+2) FileReader and FileWriter: Used for reading and writing characters from and to files. They are character-oriented counterparts to FileInputStream and FileOutputStream.
+
+3) BufferedReader and BufferedWriter: Add buffering functionality to character streams, making reading and writing more efficient by reducing the number of I/O operations.
+
+
+What is Object Serialization and Deserialization in java =>
+     Serialization is a process of converting an object into sequence of bytes which can be persisted to a disk or database or can be sent through streams.
+     The reverse process of creating object from sequence of bytes is called Deserialization.
+
+-> A java object is serializable if its class implements java.io.Serializable Interface.
+-> The entire process is independent of JVM means that we can serialize an object in one plateform and we can deserialize that object on antoher plateform.
+
+
+

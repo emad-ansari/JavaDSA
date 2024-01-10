@@ -6,6 +6,7 @@ public class CustomException {
 
     }
     private static void validateAge(int age) throws AgeLessThanZeroException {
+        
        if (age < 0){
            throw new AgeLessThanZeroException("Age can not be negative");
        }

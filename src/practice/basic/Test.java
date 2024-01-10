@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        boolean check = 'c' > 'b';
+        System.out.println(check);
+
        //  Scanner sc = new Scanner(System.in);
        //  int[][] arr = new int[3][3];
        //  for (int i = 0; i < 3; i++) {
@@ -25,7 +28,7 @@ public class Test {
            {4, 5, 6},
            {7, 8, 9}
        };
-       System.out.println(Arrays.toString(serachIn2D(matrix, 8)));
+    //    System.out.println(Arrays.toString(serachIn2D(matrix, 8)));
        
     }
     static int fun(int n){
