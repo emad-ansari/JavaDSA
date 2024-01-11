@@ -1,0 +1,9 @@
+{
+
+    "editor.lineNumbers": "on",
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": "on",
+    // "workbench.iconTheme": "material-icon-theme",
+    "editor.fontLigatures": true,
+
+}

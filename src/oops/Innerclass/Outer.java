@@ -3,7 +3,7 @@ package oops.Innerclass;
 public class Outer {
     private int age;
 
-    Outer(int  DATA_OF_BIRTH) {
+    Outer(int age) {
         this.age =  age;
     }
     private int returnAge(){

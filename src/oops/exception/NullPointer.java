@@ -2,7 +2,7 @@ package oops.exception;
 
 public class NullPointer {
     public static void main(String[] args) {
-        String str = null;
+        // String str = null;
         int[] arr = {1, 2};
         try {
             arr[3] = 8;

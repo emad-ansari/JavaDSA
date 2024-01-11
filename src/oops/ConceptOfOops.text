@@ -674,9 +674,20 @@ Thread =>  Before introducing the thread concept, we were unable to run more tha
            local variables and program counter When multiple threads are executed in parallel at the same time, this process is
            known as Multithreading.
 
+
+Difference between Concurrency and Parallelism = > 
+
+    Concurrency :- Concurrency is the task of running and managing the multiple computations at the same time.
+
+    Parallelism :- Parallelism is the task of running multiple computations simultaneously.
+    
+
 Thread life cycle =>
  1) New :- instance of thread is created which is not yet started by invoking start()
- 2) Runnable :- After invocation of start
+ 2) Runnable :- After invocation of start() method  & before it is selected to be run by the schedular.
+ 3) Running :- After thread schedular has selected it 
+ 4) Non-Runnable :- Thread is alive but not eligible to run.
+ 5) Terminated :- run() method has exitted.
 
 
 
@@ -689,24 +700,16 @@ Thread life cycle =>
 
 Synchronization in Java => Synchronization in Java is the capability to control the access of multiple threads to any shared resource.
                            Java Synchronization is better option where we want to allow only one thread to access the shared resource.
+POITNS TO REMEMBER : -
+-> In Java, synchronization is a mechanism that ensures that only one thread at a time can access a shared resource or critical section of code.
+-> It helps prevent data inconsistencies and ensures that multiple threads do not interfere with each other when working with shared data.
+-> In Java, synchronization is typically achieved using the synchronized keyword or by using explicit locks provided by the java.util.concurrent.locks package.
 
 Why use Synchronization? =>
-         The synchronization is mainly used to
-         To prevent thread interference.
+        The synchronization is mainly used to
+        To prevent thread interference.
         To prevent consistency problem.
 
 
 Types of Synchronization => 1) Process Synchronization
                             2) Thread Synchronization
-
-
-
-
-
-
-
-
-
-
-
-

@@ -7,8 +7,8 @@ public class SearchInString {
         String[] str = {"Emad", "Rehan", "Arsalan", "Arshad", "Arkam", "Ajmal", "Ahsan","Euro"};
         System.out.print("Enter the item you want to search : ");
         String target = input.next();
+        input.close();
         System.out.println(SearchItems(str, target));
-
 
     }
 
