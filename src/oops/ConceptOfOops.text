@@ -713,3 +713,24 @@ Why use Synchronization? =>
 
 Types of Synchronization => 1) Process Synchronization
                             2) Thread Synchronization
+
+
+Concept of Generics in java => 
+    The java Generics programming is introduce in J2SE to deal with type-safe objects. It makes the code stable
+    by detecting the bugs at compile time.
+    -> Generics means parameterized  type. Using generics it is possible to create classes that that work with different
+    data type
+    
+
+Types of generics in java
+1) Generics method : Generic java method takes parameter and returns some value after performing some task. 
+                     Here the method has a type parameter. This allows the generic method to be used in a more general way.
+                     The compiler takes care of the type of safety which enables programmers to code easily since they 
+                     do not have to perform long, individual type castings.
+
+
+
+
+Generic Classes: A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type parameter section.
+                 There can be more than one type of parameter, separated by a comma. The classes, which accept one or more parameters, 
+                 ?are known as parameterized classes or parameterized types.

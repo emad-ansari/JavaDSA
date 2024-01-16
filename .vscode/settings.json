@@ -5,5 +5,9 @@
     "editor.cursorSmoothCaretAnimation": "on",
     // "workbench.iconTheme": "material-icon-theme",
     "editor.fontLigatures": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/emad/Downloads/mysql-connector-j_8.2.0-1ubuntu22.04_all.deb"
+    ],
 
 }

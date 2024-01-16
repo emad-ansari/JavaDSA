@@ -45,17 +45,17 @@ public class Main {
 
     }
 
-    private static void deleteFile(File myfile){
-        try {
-            myfile.delete();
-            if (!myfile.exists()){
-                System.out.println("file deleted successfully");
-            }
-        }   
-        catch(Exception e) {
-            System.out.println(e);
-        }
-    }
+    // private static void deleteFile(File myfile){
+    //     try {
+    //         myfile.delete();
+    //         if (!myfile.exists()){
+    //             System.out.println("file deleted successfully");
+    //         }
+    //     }   
+    //     catch(Exception e) {
+    //         System.out.println(e);
+    //     }
+    // }
 
 
 
