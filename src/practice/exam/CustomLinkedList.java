@@ -1,7 +1,7 @@
 package practice.exam;
 
 public class CustomLinkedList {
-    private Node head;
+    Node head;
 
     public CustomLinkedList(){
         head = null;
@@ -106,7 +106,92 @@ public class CustomLinkedList {
             }
         }
     }
-    
+    // public void reverseList(Node slow, Node fast, CustomLinkedList ans ){
+        
+    //     if (fast == null){
+    //         ans.head = slow;
+    //         return;
+    //     }
+    //     reverseList(fast, fast.next, ans);
+    //     fast.next = slow;
+    // }
+
+    public Node reverseList() {
+
+        if (this.head.next == null){
+            return null;
+        }
+        Node prev = null;
+        Node current = this.head;
+        Node next = current.next;
+        while (current != null){
+            current.next = prev;
+            prev = current;
+            current = next;
+            if (next != null){
+                next = next.next;
+            }
+        }
+
+        return prev;
+    }
+    public CustomLinkedList addTwoList(CustomLinkedList list1 , CustomLinkedList list2) {
+        CustomLinkedList ans = new CustomLinkedList();
+        Node head1 =  list1.reverseList();
+        Node head2 =  list2.reverseList();
+        int carry = 0;
+        int sum = 0;
+
+        while (head1 != null && head2 != null){
+            sum = head1.value + head2.value + carry;
+            carry = 0;
+            if (sum > 9){
+                int val = extractValue(sum, false);
+                carry = extractValue(sum, true);
+                ans.addEnd(val);
+            }
+            else {
+                ans.addEnd(sum);
+            }
+            head1 = head1.next;
+            head2 = head2.next;
+        }
+        // check if head1 is null or not if not then add the remaining one
+        while (head1 != null){
+            if (carry != 0){
+                sum = head1.value + carry;
+                carry = 0;
+                ans.addEnd(sum);
+            }
+            else {
+                ans.addEnd(head1.value);
+            }
+            head1 = head1.next;
+        } 
+
+        while (head2 != null){
+            if (carry != 0){
+                sum = head2.value + carry;
+                carry = 0;
+                ans.addEnd(sum);
+            }
+            else {
+                ans.addEnd(head2.value);
+            }
+            head2 = head2.next;
+        } 
+        return ans;
+    }
+
+    public int extractValue(int number, boolean carry) {
+
+        if (carry){
+            number /= 10;
+            return number;
+        }
+        int value = number % 10;
+        return value ;
+    }
 
     public void display(){
         Node node = head;
@@ -116,4 +201,34 @@ public class CustomLinkedList {
         }
         System.out.println("NULL");
     }
+
+    
+
+    public static void main(String[] args) {
+        CustomLinkedList list = new CustomLinkedList();
+        list.addEnd(5);
+        list.addEnd(4);
+        list.addEnd(3);
+        list.addEnd(4);
+        list.addEnd(6);
+        list.addEnd(7);
+
+        list.display();
+
+        CustomLinkedList list2 = new CustomLinkedList();
+
+        list2.addEnd(4);
+        list2.addEnd(8);
+        list2.addEnd(3);
+        list2.addEnd(1);
+        list2.addEnd(5);
+
+        list2.display();
+
+        CustomLinkedList ans = new CustomLinkedList();
+        ans = ans.addTwoList(list, list2);
+        ans.display();
+
+    }
+
 }

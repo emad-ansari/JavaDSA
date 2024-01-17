@@ -1,7 +1,8 @@
 package practice.exam;
 
 public class QueueUsingLikedList {
-    private Node top;
+    // here front will act as a head and Rear will act as a tail.
+    private Node front, rear;
  
 
     private class Node {
@@ -11,26 +12,31 @@ public class QueueUsingLikedList {
         private Node(int item) {
             this.item = item;
         }
-
     }
 
     public void insert(int item){
         Node newNode = new Node(item);
 
-        newNode.next = top;
-        top = newNode;
+        if (front == null && rear == null){
+            front = newNode;
+            rear = newNode;
+        }
+        else {
+            rear.next = newNode;
+            rear = newNode;
+        }
     }
 
-    public void pop(){
-        if (top == null){
-            System.out.println("Can not delete from empty stack");
+    public void remove(){
+        if (front == null){
+            System.out.println("Can not delete from empty Queue");
             return;
         }
-        top = top.next;
+        front = front.next;
     }
 
     public void display(){
-        Node node = top;
+        Node node = front;
         while (node != null){
             System.out.print(node.item + " -> ");
             node = node.next;
@@ -41,19 +47,19 @@ public class QueueUsingLikedList {
     }
     public static void main(String[] args) {
         QueueUsingLikedList list = new QueueUsingLikedList();
-        list.push(10);
-        list.push(20);
-        list.push(30);
-        list.push(40);
-        list.push(50);
-        list.push(60);
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+        list.insert(60);
 
         list.display();
 
-        list.pop();
-        list.pop();
-        list.pop();
-        list.pop();
+        list.remove();
+        list.remove();
+        list.remove();
+        list.remove();
 
         list.display();
 

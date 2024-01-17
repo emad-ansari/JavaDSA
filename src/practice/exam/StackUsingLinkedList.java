@@ -8,8 +8,6 @@ public class StackUsingLinkedList {
 
         private int item;
         Node next;
-
-
         private Node(int item) {
             this.item = item;
         }
@@ -18,7 +16,6 @@ public class StackUsingLinkedList {
 
     public void push(int item){
         Node newNode = new Node(item);
-
         newNode.next = top;
         top = newNode;
         
@@ -40,26 +37,37 @@ public class StackUsingLinkedList {
             
         }
         System.out.println("NULL");
-
     }
+
     public static void main(String[] args) {
-        StackUsingLinkedList list = new StackUsingLinkedList();
-        list.push(10);
-        list.push(20);
-        list.push(30);
-        list.push(40);
-        list.push(50);
-        list.push(60);
+        StackUsingLinkedList list1 = new StackUsingLinkedList();
+        list1.push(10);
+        list1.push(20);
+        list1.push(30);
+        list1.push(40);
+        list1.push(50);
+        list1.push(60);
 
-        list.display();
+        // list1.display();
 
-        list.pop();
-        list.pop();
-        list.pop();
-        list.pop();
+        // list1.pop();
+        // list1.pop();
+        // list1.pop();
+        // list1.pop();
 
-        list.display();
+        list1.display();
 
+        StackUsingLinkedList list2 = new StackUsingLinkedList();
+        list2.push(60);
+        list2.push(50);
+        list2.push(40);
+        list2.push(30);
+        list2.push(20);
+        list2.push(10);
+        System.out.println("hello");
+
+
+        list2.display();
     }
     
 
