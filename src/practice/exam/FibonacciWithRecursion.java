@@ -2,11 +2,20 @@ package practice.exam;
 
 public class FibonacciWithRecursion {
     public static void main(String[] args) {
-        fibonacci(50, 0, 0, 1);
+        int n = 7;
+        System.out.println(n + "th fibonacci number is : " + fib(n));
 
     }
-    // solve the fibonacci with recursion
-//     0, 1, 1, 2, 3, 5, 8, 13,
+
+    public static int fib(int n ){
+        if (n <= 1){
+            return n;
+        }
+        return fib(n -1) + fib(n - 2);
+    }
+
+
+
     static void fibonacci(int n, int nextTerm, int a, int b ){
         if (n < 2){
             return;

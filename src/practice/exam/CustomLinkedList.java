@@ -1,12 +1,11 @@
 package practice.exam;
 
+
 public class CustomLinkedList {
     Node head;
-
     public CustomLinkedList(){
         head = null;
     }
-
     private class Node {
         Node next;
         private int value;
@@ -14,8 +13,70 @@ public class CustomLinkedList {
         public Node(int value ) {
             this.value = value;
         } 
+    }    
+    public int findSecondLargest(CustomLinkedList list) {
+        if (list.head == null || list.head.next == null) {
+            System.out.println("Linked list doesn't have enough elements.");
+            return -1;
+        }
+
+        int firstMax = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        Node current = list.head;
+        while (current != null) {
+            if (current.value > firstMax) {
+                secondMax = firstMax;
+                firstMax = current.value;
+            } else if (current.value > secondMax && current.value < firstMax) {
+                secondMax = current.value;
+            }
+            current = current.next;
+        }
+
+        if (secondMax == Integer.MIN_VALUE) {
+            System.out.println("There is no second largest element.");
+            return -1;
+        }
+
+        return secondMax;
     }
-    
+
+    public void insertAfter(int value, int after){
+        Node newNode = new Node(value);
+
+        Node afterNode = head;
+        while (afterNode != null && afterNode.value != after){
+            afterNode = afterNode.next;
+        }
+        if (afterNode != null){
+            newNode.next = afterNode.next;
+            afterNode.next = newNode;
+        }
+        else {
+            System.out.println("after node not found");
+            return;
+        }
+    }
+
+    public void removeByKey(int key){
+        if (head != null){
+            Node prevNode = null;
+            Node currentNode = head;
+
+            while (currentNode != null && currentNode.value != key){
+                prevNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            if (currentNode != null){
+                prevNode.next = currentNode.next;
+            }
+            else {
+                System.out.println("key no found");
+            }
+        }
+    }
+
 
     public void addFront(int value){
         Node newNode  = new Node(value);
@@ -49,22 +110,6 @@ public class CustomLinkedList {
             last.next = newNode;
         }
     }
-    public void insertAfter(int value, int after){
-        Node newNode = new Node(value);
-
-        Node afterNode = head;
-        while (afterNode != null && afterNode.value != after){
-            afterNode = afterNode.next;
-        }
-        if (afterNode != null){
-            newNode.next = afterNode.next;
-            afterNode.next = newNode;
-        }
-        else {
-            System.out.println("after node not found");
-            return;
-        }
-    }
 
     public void removeFront(){
         if (head == null){
@@ -89,23 +134,6 @@ public class CustomLinkedList {
         last.next = null;
     }
 
-    public void removeByKey(int key){
-        if (head != null){
-            Node prevNode = null;
-            Node currentNode = head;
-
-            while (currentNode != null && currentNode.value != key){
-                prevNode = currentNode;
-                currentNode = currentNode.next;
-            }
-            if (currentNode != null){
-                prevNode.next = currentNode.next;
-            }
-            else {
-                System.out.println("key no found");
-            }
-        }
-    }
     // public void reverseList(Node slow, Node fast, CustomLinkedList ans ){
         
     //     if (fast == null){
@@ -214,20 +242,21 @@ public class CustomLinkedList {
         list.addEnd(7);
 
         list.display();
+        System.out.println("Second largest element is: " + list.findSecondLargest(list));
 
-        CustomLinkedList list2 = new CustomLinkedList();
+        // CustomLinkedList list2 = new CustomLinkedList();
 
-        list2.addEnd(4);
-        list2.addEnd(8);
-        list2.addEnd(3);
-        list2.addEnd(1);
-        list2.addEnd(5);
+        // list2.addEnd(4);
+        // list2.addEnd(8);
+        // list2.addEnd(3);
+        // list2.addEnd(1);
+        // list2.addEnd(5);
 
-        list2.display();
+        // list2.display();
 
-        CustomLinkedList ans = new CustomLinkedList();
-        ans = ans.addTwoList(list, list2);
-        ans.display();
+        // CustomLinkedList ans = new CustomLinkedList();
+        // ans = ans.addTwoList(list, list2);
+        // ans.display();
 
     }
 

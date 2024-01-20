@@ -3,6 +3,7 @@ package practice.Recursion;
 public class BinarySearch {
     public static void main(String[] args) {
         int[] arr = {2, 4, 5, 9, 11, 20};
+        System.out.print("my target is at index : ");
         System.out.println(binarySearch(arr, 0, arr.length -1, 5));
 
     }

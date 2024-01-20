@@ -1,12 +1,14 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
-        printPath(3, 3, "");
-        System.out.println(printPath1(3, 3, ""));
 
-    }
+        // printPath(3, 3, "");
+        // System.out.println(printPath1(3, 3, ""));
+
+    } 
 
     static void printPath(int r, int c, String path){
         if ( r == 1 && c == 1){

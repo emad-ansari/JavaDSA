@@ -1,0 +1,33 @@
+What is tree data structuer :- A tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search. It is a collection of nodes that are connected by edges and has a hierarchical relationship between the nodes. 
+
+
+Where tree is used => 1) File system
+                      2) Databases
+                      3) Networking algorithm
+                      4) Math
+                      5) Decision trees (Machine learning)
+                      6) Compression of File
+
+
+Properties of binary trees =>
+                      1) Root node :- Top most node 
+                      2) size :- Total number of nodes
+                      3) Edge :- line throughh which node are connected to each other
+                      4) Leaf node :- The node which do not have any child is knowns as leaf node 
+                      5) Height of node :- max height (from that node to leaf node) is the  node Height
+                      6) Level :- height of root node - height of node 
+                      7) Degree :- No of children of a node is called degree of that node it can be either 0, 1, or 2
+
+Types of binary tree => 
+                      1) Complete binary tree :- all the levels of the tree are filled completely except the lowest level. 
+
+                      2) Full/Strict binary tree :- A full binary tree is defined as a binary tree in which all nodes have either zero or two child nodes.
+
+                      3) Perfect binary tree:-  At each level there should be (2^L - 1)node .
+
+-> if there is N numbers of node and we have to distribute it then there will be minimum log(N + 1) no of levels.
+
+Balanced Binary tree => balance binary tree is a binary tree in which height difference between two node at same level will be less than equal to 1(hight difference <= 1)
+
+Binary Search tree => left hand side will be smaller element and right hand side will be greater element.
+

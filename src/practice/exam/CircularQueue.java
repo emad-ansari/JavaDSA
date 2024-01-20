@@ -27,7 +27,7 @@ public class CircularQueue {
         end = end % data.length;
         size++;
     }
-    public  int  remove() throws EmptyQueueException{
+    public int remove() throws EmptyQueueException{
         if (isEmpty()){
             throw new EmptyQueueException("Can not remove from empty queue");
         }
@@ -43,15 +43,36 @@ public class CircularQueue {
     }
 
     private boolean isFull(){
-        return  end == data.length;
+        return  size  == data.length;
     }
 
 
     public void display(){
-        for (int i = front; i < end; i++) {
-            System.out.print(data[i] +  " <- ");
-        }
+        int i = front;
+        do {
+            System.out.print(data[i++] +  " -> ");
+            i = i % data.length;
+            
+        }while (i != end);
+
         System.out.println("END");
+    }
+    public static void main(String[] args) throws EmptyQueueException {
+        CircularQueue queue = new CircularQueue();
+        queue.insert(10);
+        queue.insert(20);
+        queue.insert(30);
+        queue.insert(40);
+
+        queue.insert(50);
+        queue.display();
+
+        System.out.println(queue.remove());
+
+        queue.insert(70);
+
+        queue.display();
+        System.out.println(queue.end);
     }
     
 }
