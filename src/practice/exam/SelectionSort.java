@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {15, 32, 27, 31, 8, 11};
-//        selection(arr);
-        selectionWithRec(arr, arr.length, 0, 0);
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Before sorting: " + Arrays.toString(arr));
+        selection(arr);
+
+        System.out.println("After sorting: " + Arrays.toString(arr));
 
     }
     static void selection(int[] arr){
@@ -25,6 +26,7 @@ public class SelectionSort {
             arr[arr.length - i - 1]  = temp;
         }
     }
+    // selectionWithRec(arr, arr.length, 0, 0);
 
     // selection sort with recursion
     static void selectionWithRec(int[] arr, int row, int col, int max){

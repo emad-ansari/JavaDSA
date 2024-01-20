@@ -2,6 +2,7 @@ package practice.exam;
 
 public class TowerOfHanoi {
     public static void main(String[] args) {
+        System.out.println("For three disc: ");
         TOH(3, 1, 2, 3);
 
     }
