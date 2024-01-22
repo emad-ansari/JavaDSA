@@ -4,8 +4,8 @@ public class BST {
     
     class Node {
         private int value, height;
-        private Node left;
-        private Node right;
+        protected Node left;
+        protected Node right;
 
         Node (int value) {
             this.value = value;
@@ -16,12 +16,13 @@ public class BST {
         }
 
     }
-    private Node root;
+    protected Node root;
 
     public BST() {
         root = null;
     }
 
+   
     public int heightOf(Node node){
         if (node == null){
             return -1;
@@ -53,10 +54,22 @@ public class BST {
     
     }
     public void remove(int vlaue) {
-        
+
 
 
     }
+    public void populatedSorted(int[] nums, int start, int end) {
+        if (start >= end){
+            return;
+        }
+        int mid = start + (end - start) / 2;
+        this.insert(nums[mid]);
+
+        populatedSorted(nums, start, mid);
+        populatedSorted(nums, mid + 1, end);
+    }
+
+
 
     public boolean balanced() {
         return balanced(root);
@@ -76,6 +89,20 @@ public class BST {
         for (int i = 0; i < nums.length; i++) {
             this.insert(nums[i]);
         }
+    }
+
+
+    public void preOrderTraversal(BST tree) {
+        traversal(root);
+    }
+
+    private void traversal(Node node){
+        if (node == null){
+            return;
+        }
+        System.out.println(node.value);
+        traversal(node.left);
+        traversal(node.right);
     }
 
     public void display(){

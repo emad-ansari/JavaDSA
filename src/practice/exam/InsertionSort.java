@@ -8,7 +8,7 @@ public class InsertionSort {
     private void insertion_sort(int[] arr){
         for (int i = 0; i < arr.length - 1; i++) {
             int j = i + 1;
-            while (j > 0 &&arr[j - 1] > arr[j]){
+            while (j > 0 && arr[j - 1] > arr[j]){
                 int temp = arr[j - 1];
                 arr[j - 1] = arr[j];
                 arr[j] = temp;
@@ -79,9 +79,9 @@ public class InsertionSort {
 
 
     // Implement the bubble sort with recursion
-    private void bubble_sort_with_recursion(int[] arr, int row , int col){
+    // private void bubble_sort_with_recursion(int[] arr, int row , int col){
 
-    }
+    // }
 
 
 
@@ -91,7 +91,8 @@ public class InsertionSort {
 
         InsertionSort sort_array = new InsertionSort();
 //        sort_array.bubble_sort(arr);
-        System.out.println(Arrays.toString(sort_array.merge_sort(arr)));
+        sort_array.insertion_sort(arr);
+        System.out.println(Arrays.toString(arr));
 
 
     }
