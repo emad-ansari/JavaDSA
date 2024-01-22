@@ -18,7 +18,7 @@ public class fibonacci {
         }
         return fib(n - 1) + fib(n - 2);
     }
-
+        // 0, 1, 1, 2, 3, 5, 8, 13
     static void printFib(int n){
         int a = 0;
         int b = 1;
@@ -60,12 +60,10 @@ public class fibonacci {
         int a = 0;
         int b = 1;
         int nextTerm = 0;
-        if (n == 0){
-            return a;
+        if (n <= 1 ){
+            return n;
         }
-        if (n == 1){
-            return b;
-        }
+      
 
         for (int i = 0; i <= n- 2; i++) {
             nextTerm = a + b;
