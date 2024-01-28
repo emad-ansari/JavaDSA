@@ -10,6 +10,8 @@ public class javaClass {
         System.out.println( student2.roll + " " + student2.age +  " " +student2.name);
         System.out.println( student3.roll + " " + student3.age +  " " +student3.name);
 
+       
+
     }
 
 

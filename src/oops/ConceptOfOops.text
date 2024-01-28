@@ -3,7 +3,7 @@ About the Parameters Passed in Java =>
                But, in Java, the pass by reference concept is degraded.It supports only the pass by value concept. 
 
            --> The primitive variables hold the actual values, whereas the non-primitive variables hold the reference variable. 
-               However, both variables use stack memory to store the values. See more about data types in Java.
+               However, both variables use stack memory to store the values.
 
            --> In Java, during the method invokation, a copy of each argument is created then passed to the method.
 
@@ -71,12 +71,12 @@ There are four types of access modifiers available in Java:
 3. Protected Access Modifier :- The protected access modifier is specified using the keyword protected. The methods or data
                                 members declared as protected are accessible within the same package or subclasses in same/different packages.
 
-Public Access modifier :- The public access modifier is specified using the keyword public. The public access modifier has the widest scope
+4. Public Access modifier :- The public access modifier is specified using the keyword public. The public access modifier has the widest scope
                           among all other access modifiers. Classes, methods, or data members that are declared as public are accessible from
                           everywhere in the program. There is no restriction on the scope of public data members.
 
 Constructors => Constructors are special type of function in java which have no return type
-                we can easily understand the what is constructor with the help of constructor
+                we can easily understand the what is constructor with the help of constructor properties.
                 1) compiler automatically call the constructor when a new object is created of the class
                 2) It has no return type
                 3) Name of constructor is the same as className
@@ -105,6 +105,13 @@ Method Overloading in Java => It is one of the feature of java. Method overloadi
 (this) KEYWORD in java => In Java, ‘this’ is a reference variable that refers to the current object, or can be said “this” in Java is a keyword that refers to the
                           current object instance. It can be used to call current class methods and fields, to pass an instance of the current class as a parameter,
                           and to differentiate between the local and instance variables. Using “this” reference can improve code readability and reduce naming conflicts.
+                          1) this can be refers to current class instance variable
+                          2) this can be used to invoke current class method
+                          3) this() can be used to invoke current class Constructor
+                          4) this can be passed in argument of method call
+                          5) this can be passed as argument to constructor call
+                          6) this can be used to return the current class instance from the method
+
 
 // Java code for using 'this' keyword to
 // refer current class instance variables
@@ -236,28 +243,28 @@ Use of Wrapper classes in Java => Java is an object-oriented programming languag
 PROBLEM STATEMENT : Write programs to convert primitive data types to object and vice-versa
 1) Primitive to object :- //Java program to convert primitive into objects
                           //Autoboxing example of int to Integer
-                          public class WrapperExample1{
-                              public static void main(String args[]){
-                                  //Converting int into Integer
-                                  int a = 20;
-                                  Integer i = Integer.valueOf(a);//converting int into Integer explicitly
-                                  Integer j = a;//autoboxing, now compiler will write Integer.valueOf(a) internally
-                                  System.out.println(a+" "+i+" "+j);
-                              }
-                          }
+                        public class WrapperExample1{
+                            public static void main(String args[]){
+                                //Converting int into Integer
+                                int a = 20;
+                                Integer i = Integer.valueOf(a);//converting int into Integer explicitly
+                                Integer j = a;//autoboxing, now compiler will write Integer.valueOf(a) internally
+                                System.out.println(a+" "+i+" "+j);
+                            }
+                        }
 
 2) object to primitive => //Java program to convert object into primitives
                           //Unboxing example of Integer to int
-                          public class WrapperExample2{
-                              public static void main(String args[]){
-                                  //Converting Integer to int
-                                  Integer a = new Integer(3);
-                                  int i = a.intValue();//converting Integer to int explicitly
-                                  int j = a;//unboxing, now compiler will write a.intValue() internally
+                        public class WrapperExample2{
+                            public static void main(String args[]){
+                                //Converting Integer to int
+                                Integer a = new Integer(3);
+                                int i = a.intValue();//converting Integer to int explicitly
+                                int j = a;//unboxing, now compiler will write a.intValue() internally
 
-                                  System.out.println(a+" "+i+" "+j);
-                              }
-                          }
+                                System.out.println(a+" "+i+" "+j);
+                            }
+                        }
 
 
 
@@ -276,12 +283,12 @@ Java API Packages  => A java package is a group of similar types of classes, int
 Advantage of Java Package =>
                     1) Java package is used to categorize the classes and interfaces so that they can be easily maintained.
                     2) Java package provides access protection.
-                    3) Java package removes naming collision.
+                    3) Java package removes naming collision. 
 
 How to access package from another package?
     There are three ways to access the package from outside the package.
 
-1) import package.*;
+1) import package_name.*;
 2) import package.classname;
 3) fully qualified name.
 
@@ -512,14 +519,14 @@ Example of third point:- class Animal{
                             Animal(){System.out.println("animal is created");}
                          }
                          class Dog extends Animal{
-                             Dog(){
-                             super();  // this will call the constructor of parent class which is "Animal"
-                             System.out.println("dog is created");
+                            Dog(){
+                            super();  // this will call the constructor of parent class which is "Animal"
+                            System.out.println("dog is created");
                          }
 
 Method Overriding => If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
-                    In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class,
-                    it is known as method overriding. It is also called run time polymorphism or dynamic binding.
+                     In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class,
+                     it is known as method overriding. It is also called run time polymorphism or dynamic binding.
 
 Rules for Java Method Overriding =>
     1) The method must have the same name as in the parent class
@@ -553,7 +560,7 @@ Abstract class in Java => A class which is declared as abstract is known as an a
 
 
 
-Interface in Java => An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+Interface in Java => An interface in Java is a blueprint of a class. It has static and final variables and abstract methods.
                      The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body.
                      It is used to achieve abstraction and multiple inheritance in Java.
                      -> we can not create constructor of interface
@@ -687,7 +694,7 @@ Thread life cycle =>
  2) Runnable :- After invocation of start() method  & before it is selected to be run by the schedular.
  3) Running :- After thread schedular has selected it 
  4) Non-Runnable :- Thread is alive but not eligible to run.
- 5) Terminated :- run() method has exitted.
+ 5) Terminated :- run() method has exited.
 
 
 
@@ -718,7 +725,7 @@ Types of Synchronization => 1) Process Synchronization
 Concept of Generics in java => 
     The java Generics programming is introduce in J2SE to deal with type-safe objects. It makes the code stable
     by detecting the bugs at compile time.
-    -> Generics means parameterized  type. Using generics it is possible to create classes that that work with different
+    -> Generics means parameterized type. Using generics it is possible to create classes that work with different
     data type
     
 
@@ -728,9 +735,6 @@ Types of generics in java
                      The compiler takes care of the type of safety which enables programmers to code easily since they 
                      do not have to perform long, individual type castings.
 
-
-
-
-Generic Classes: A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type parameter section.
-                 There can be more than one type of parameter, separated by a comma. The classes, which accept one or more parameters, 
-                 ?are known as parameterized classes or parameterized types.
+2) Generic Classes: A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type parameter section.
+                    There can be more than one type of parameter, separated by a comma. The classes, which accept one or more parameters, 
+                    are known as parameterized classes or parameterized types.

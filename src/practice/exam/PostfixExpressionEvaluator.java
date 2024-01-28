@@ -6,6 +6,7 @@ public class PostfixExpressionEvaluator {
 
     public static int evaluatePostfixExpression(String postfixExpression) {
         Stack<Integer> operandStack = new Stack<>();
+        
 
         for (char token : postfixExpression.toCharArray()) {
             if (Character.isDigit(token)) {
@@ -44,3 +45,4 @@ public class PostfixExpressionEvaluator {
         System.out.println("Result of the postfix expression '" + postfixExpression + "': " + result);
     }
 }
+

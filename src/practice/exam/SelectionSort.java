@@ -29,7 +29,7 @@ public class SelectionSort {
     // selectionWithRec(arr, arr.length, 0, 0);
 
     // selection sort with recursion
-    static void selectionWithRec(int[] arr, int row, int col, int max){
+    static void selectionWithRec(int[] arr, int row, int col, int max){ 
         if (row == 0){
             return;
         }
