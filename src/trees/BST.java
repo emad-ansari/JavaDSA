@@ -53,11 +53,29 @@ public class BST {
         return node;
     
     }
-    public void remove(int vlaue) {
-
-
-
+    public void removeLeafNode(int value) {
+        // apply the post order traversal method
+        Node node = root;
+        
+        removeLeafNode(node, value);
     }
+
+    private void removeLeafNode(Node node , int value) {
+        if (node == null){
+            return;
+        }
+        if (node.left.value == value){
+            node.left = null;
+        }
+        else if (node.right.value == value){
+            node.right = null;
+        }
+        removeLeafNode(node.left , value);
+        removeLeafNode(node.right, value);
+        removeLeafNode(node.value);
+    }
+
+
     public void populatedSorted(int[] nums, int start, int end) {
         if (start >= end){
             return;
@@ -92,7 +110,7 @@ public class BST {
     }
 
 
-    public void preOrderTraversal(BST tree) {
+    public void preOrderTraversal() {
         traversal(root);
     }
 

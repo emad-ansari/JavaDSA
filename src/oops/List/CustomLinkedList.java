@@ -1,7 +1,5 @@
 package oops.List;
 
-
-
 public class CustomLinkedList {
     private Node head;
     private Node tail;

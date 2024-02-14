@@ -1,4 +1,4 @@
-package oops.exam;\
+package oops.exam;
 public class Main {
     public static void main(String[] args) {
         WrapperClasses obj = new WrapperClasses();

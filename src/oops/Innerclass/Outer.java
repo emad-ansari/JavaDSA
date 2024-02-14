@@ -1,35 +1,33 @@
 package oops.Innerclass;
 // example of Nested class
 public class Outer {
-    // private int age;
-
-    // Outer(int age) {
-    //     this.age =  age;
-    // }
-    // private int returnAge(){
-    //     return age;
-
-    // }
-
-
-    // // exmaple of inner class
-    // public class Inner {
-    //     Inner() {
-    //         System.out.println("this is inner class");
-    //     }
-    //     void greeting() {
-    //         System.out.println("hello world");
-    //     }
-
-        
-    // }
-
-
-    // public static void main(String[] args){
-    //     Outer.Inner obj = new Outer(10).new Inner();
-    //     obj.greeting();
-    // }   
-
-
     
+
+    // exmaple of inner class
+    class Inner {
+        Inner() {
+            System.out.println("this is private inner class");
+        }
+        void greeting() {
+            System.out.println("non-static method inside inner class");
+        }
+        static void greet() {
+            System.out.println("static method inside inner class");
+        }
+    }
+
+    public Inner getInnerClass() {
+        return new Inner();
+    }
+
+
+    public static void main(String[] args){
+        // Outer.Inner obj = new Outer().new Inner();
+        //   obj.greeting();
+        Outer obj1 = new Outer();
+        Inner obj2 = obj1.getInnerClass();
+        
+        obj2.greeting();
+        Inner.greet();
+    }       
 }

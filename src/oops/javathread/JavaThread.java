@@ -1,6 +1,7 @@
 package oops.javathread;
 
 class MyThread1 extends Thread{
+    @Override
     public void run() {
         int i = 0;
         while (i < 10000){
@@ -21,19 +22,62 @@ class MyThread2 extends Thread{
             j++;
         }
         System.out.println("Exit from thread 2");
-
-        
     }
 
 }
 
 public class JavaThread {
     public static void main(String[] args) {
-        MyThread1 t1 = new MyThread1();
-        MyThread2 t2 = new MyThread2();
-        t1.start();
-        t2.start();    
+        try {
+            long start = System.currentTimeMillis();
+            MyThread1 t1 = new MyThread1();
+            MyThread2 t2 = new MyThread2();
+
+            t1.start();
+            t2.start();    
+            t2.setPriority(6);
+            Thread.sleep(2000);    
+            System.out.println("Sleep time in millisecond: " + (System.currentTimeMillis() - start));
+
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+ 
     }
     
 }
  
+
+
+class ThreadSleep extends Thread{
+    int sleepTime;
+    ThreadSleep(String threadName, int sleepTime) {
+        super(threadName);
+        this.sleepTime = sleepTime;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(this.getName() + " is starting....");
+        try {
+            Thread.sleep(sleepTime);
+        }
+        catch(InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println(this.getName() + " has completed after sleeping for " + sleepTime + " millisecond");
+    }
+}
+
+class sleepExample{
+    public static void main(String[] args) {
+        ThreadSleep thread1 = new ThreadSleep("Thread 1", 1000);
+        ThreadSleep thread2 = new ThreadSleep("thread 2", 2000);
+        thread1.start();
+        thread2.start();
+    }
+    
+
+
+} 

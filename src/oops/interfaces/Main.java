@@ -7,5 +7,14 @@ public class Main {
         car.stopEngine();
         car.startMedia();
         car.stopEngine();
+
+        Warrior warrior = new Warrior();
+        Mage mage = new Mage();
+
+        warrior.use();
+        warrior.attack();
+
+        mage.use();
+        mage.attack();
     }
 }
