@@ -13,7 +13,9 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {5, 4, 3, 2, 1};
         System.out.println("Before sorting: " + Arrays.toString(arr));
-        System.out.println("After sorting: " + Arrays.toString(mergeSort(arr)));
+
+        arr = mergeSort(arr);
+        System.out.println("After sorting: " + Arrays.toString(arr));
     }
 
     static int[] mergeSort(int[] arr){

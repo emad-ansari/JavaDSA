@@ -5,13 +5,15 @@ public class StackUsingLinkedList {
  
 
     private class Node {
-
         private int item;
         Node next;
         private Node(int item) {
             this.item = item;
         }
+    }
 
+    StackUsingLinkedList() {
+        top = null;
     }
 
     public void push(int item){

@@ -1,5 +1,8 @@
 package practice.exam;
 
+// Write a Java program to print elements which are appeared single time in
+// array of integers.
+
 public class AppearedSingle {
     public static void main(String[] args) {
 

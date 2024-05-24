@@ -4,7 +4,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.io.IOException;
 import java.io.FileInputStream;
-import java.nio.file.Path;
+
 
 public class DeserializeObject {
     public static void main(String[] args) throws IOException, ClassNotFoundException {

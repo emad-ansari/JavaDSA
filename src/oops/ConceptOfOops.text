@@ -1,3 +1,19 @@
+Differentiate JDK, JVM & JRE with respect to their use.
+JVM => JVM (Java Virtual Machine) is an abstract machine. It is called a virtual machine because it doesn't physically exist. It is a specification that provides a runtime environment in which Java bytecode can be executed. It can also run those programs which are written in other languages and compiled to Java bytecode.
+-> JVM is the heart of the java programming language
+
+The JVM performs the following main tasks:
+1) Loads code
+2) Verifies code
+3) Executes code
+4) Provides runtime environment
+
+JRE => JRE is an acronym for Java Runtime Environment. It is also written as Java RTE. The Java Runtime Environment is a set of software tools which are used for developing Java applications. It is used to provide the runtime environment. It is the implementation of JVM. It physically exists. It contains a set of libraries + other files that JVM uses at runtime.
+
+
+JDK => Java Development Kit aka JDK is the core component of Java Environment and provides all the tools, executables, and binaries required to compile, debug, and execute a Java Program. JDK is a platform-specific software and that’s why we have separate installers for Windows, Mac, and Unix systems. We can say that JDK is the superset of JRE since it contains JRE with Java compiler, debugger, and core classes.
+
+
 About the Parameters Passed in Java =>  
            --> The fundamental concept for passing the parameters in modern programming languages is passing by value and passing by reference. 
                But, in Java, the pass by reference concept is degraded.It supports only the pass by value concept. 
@@ -190,7 +206,7 @@ What are string in java => Strings are the type of objects that can store the ch
                                here in this example we are not changing the value of (a) but we are creating a new string object("Kushwaha") in heap memory
 
 Java StringBuffer Class => Java StringBuffer class is used to create mutable (modifiable) String objects. The StringBuffer class in Java is the same as String
-                           class except it is mutable i.e. it can be changed.
+                           class except it is muta  ble i.e. it can be changed.
 
 Advantages of StringBuffer : 1) It is mutable
                              2) It is more efficient than String because no new object will created when we will modify it
@@ -576,6 +592,13 @@ Java Inner Classes (Nested Classes) =>
            We use inner classes to logically group classes and interfaces in one place to be more readable and maintainable.
            Additionally, it can access all the members of the outer class, including private data members and methods.
 
+Types of Inner classes =>   There are four type of Inner class
+
+1) Nested Inner Class -> have access any private member of outer class
+2) Method Local Inner Classes -> A class inside a method/function is known as method local inner class. declared inside method of outer class
+3) Static Nested Classes -> Static nested classes are not technically inner classes. They are like a static member of outer class. 
+4) Anonymous Inner Classes -> A class having no name and having defined inside another class is known as Anonymous Inner class 
+
 
 
 
@@ -612,7 +635,7 @@ Exception Hierarchy =>  The java.lang.Throwable class is the root class of Java 
 Difference between Checked Exception and  Unchecked Exception :-
 
 Checked Exception => 1) An exception that is checked by the compiler at compile time
-                     2) These exception cannot be simply ignored, programmer should handle these exception
+                     2) These exception cannot be simply ignored, programmer should handle these exception.
                      3) eg. I/O exception
 
 Unchecked Exception => 1) An exception that occurs at time of program execution.
@@ -664,17 +687,17 @@ Some built in exception in java =>
 
 
 
- USER DEFINED EXCEPTION => some time built-in exception of java is not good to use for a specific scenario so we define a custom
+ USER DEFINED EXCEPTION => some time built-in exception of java does not match to a specific scenario so we define a custom
                            exception with a proper message so that we can handle that exception
-                           --> custom exception is defined by extends Exception class in java
-                           --> eg . suppose we define a age validation function to check that age is not less than zero if it is zero then we can define a
+                           --> custom exception is defined by extending Exception class in java.
+                           --> eg. suppose we define a age validation function to check that age is not less than zero if it is zero then we can define a
                            custom exception for this which will throw AgeLessThanZeroException if age is less than zero
 
 
 Thread =>  Before introducing the thread concept, we were unable to run more than one task in parallel.
            It was a drawback, and to remove that drawback, Thread Concept was introduced.
            A Thread is a very light-weighted process, or we can say the smallest part of the process that allows a program
-           to operate more efficiently by running multiple tasks simultaneously.
+           to operate more efficiently by running multiple tasks simultaneously.(ek saath)
 
            Another benefit of using thread is that if a thread gets an exception or an error at the time of its execution,
            it doesn't affect the execution of the other threads. All the threads share a common memory and have their own stack,
@@ -708,7 +731,7 @@ Thread life cycle =>
 Synchronization in Java => Synchronization in Java is the capability to control the access of multiple threads to any shared resource.
                            Java Synchronization is better option where we want to allow only one thread to access the shared resource.
 POITNS TO REMEMBER : -
--> In Java, synchronization is a mechanism that ensures that only one thread at a time can access a shared resource or critical section of code.
+-> In Java, synchronization is a mechanism which ensures that only one thread at a time can access a shared resource or critical section of code.
 -> It helps prevent data inconsistencies and ensures that multiple threads do not interfere with each other when working with shared data.
 -> In Java, synchronization is typically achieved using the synchronized keyword or by using explicit locks provided by the java.util.concurrent.locks package.
 
@@ -738,3 +761,24 @@ Types of generics in java
 2) Generic Classes: A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type parameter section.
                     There can be more than one type of parameter, separated by a comma. The classes, which accept one or more parameters, 
                     are known as parameterized classes or parameterized types.
+
+
+
+
+
+
+Different between class and interface => 
+
+                Class                                                    Interface
+ 1) The keyword used to create a class is “class”                     1) The keyword used to create an interface is “interface”
+ 2) A class can be instantiated i.e., objects of a                    2) An Interface cannot be instantiated i.e. objects cannot be created.
+ class can be created.
+ 3) Classes do not support multiple inheritance.                      3) The interface supports multiple inheritance.
+ 4) It can contain constructors.                                      4) It can not contain constructor
+ 5) It cannot contain abstract methods.                               5) Interface can contain abstaract method
+
+
+ What is use of Interface in java => In java interface is reference type similar to class in java. It is the collections 
+ of abstract method. Interfaces are used to achieve abstraction and multiple inheritence in java.
+ They allow us to declare methods without providing a method body. Classes that implement interfaces must provide concrete 
+ implementations for all the methods declared in the interface.

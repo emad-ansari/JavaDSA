@@ -3,126 +3,19 @@ package oops.javathread;
 
 class MyThreadRunnable1 implements Runnable{
     public void run(){
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-
-
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-
-        System.out.println("I am  runnable thread 1");
-        System.out.println("I am  runnable thread 1");
+        for (int i = 0; i < 10000; i++) {
+            System.out.println("I am  runnable thread 1");
+            
+        }
     }
 
 }
 class MythreadRunnable2 implements Runnable{
 
     public void run(){
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-        System.out.println("I am runnable thread 2");
-
+        for (int i = 0; i < 10000; i++) {
+            System.out.println("I am runnable thread 2");            
+        }
 
     }
 }
@@ -134,11 +27,8 @@ public class JavaRunnableInterface {
 
         Thread gun1 = new Thread(bullet1);
         Thread gun2 = new Thread(bullet2);
-
         gun1.start();
         gun2.start();
-
-        
     }
     
 }

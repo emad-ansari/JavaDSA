@@ -8,7 +8,5 @@ public class Printer<T>{
     }
     public void print(){
         System.out.println("This is the object that passed to this method: " + printAnything);
-    }
-
-    
+    }    
 }

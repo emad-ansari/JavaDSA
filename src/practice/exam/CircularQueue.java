@@ -7,6 +7,9 @@ package practice.exam;
 
 */
 
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class CircularQueue {
     private int DEFAULT_SIZE;
     private int[] data;
@@ -55,7 +58,7 @@ public class CircularQueue {
             
         }while (i != end);
 
-        System.out.println("END");
+        System.out.println("Start");
     }
     public static void main(String[] args) throws EmptyQueueException {
         CircularQueue queue = new CircularQueue();
@@ -65,6 +68,8 @@ public class CircularQueue {
         queue.insert(40);
 
         queue.insert(50);
+        queue.insert(90);
+
         queue.display();
 
         System.out.println(queue.remove());
@@ -73,6 +78,7 @@ public class CircularQueue {
 
         queue.display();
         System.out.println(queue.end);
+        
     }
     
 }

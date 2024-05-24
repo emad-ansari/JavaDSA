@@ -1,6 +1,6 @@
 package trees;
 
-public class BST {
+public class BST{
     
     class Node {
         private int value, height;
@@ -9,7 +9,7 @@ public class BST {
 
         Node (int value) {
             this.value = value;
-            height = 0;
+            this.height = 0;
         }
         public int getValue(){
             return this.value;
@@ -53,11 +53,39 @@ public class BST {
         return node;
     
     }
-    public void remove(int vlaue) {
-
-
-
+    public Node deleteInBST(Node node, int key) {
+        if (key < node.value){
+            node.left = deleteInBST(node.left, key);
+        }
+        else if (key > node.value ){
+            node.right = deleteInBST(node.right, key);
+        }
+        else {
+            // means that node is the key that we have to delete
+            if (node.left == null){
+                Node temp = node.right;
+                return temp;
+            }
+            else if (node.right == null){
+                Node temp = node.left;
+                return temp;
+            }
+            Node temp = inorderSuccessor(node.right);
+            node.value = temp.value;
+            node.right = deleteInBST(node.right, temp.value);
+        }
+        return node;
     }
+
+    private Node inorderSuccessor(Node node) {
+        Node temp = node;
+        while (temp != null && temp.left != null){
+            temp = temp.left;
+        }
+        return temp;
+    }
+
+
     public void populatedSorted(int[] nums, int start, int end) {
         if (start >= end){
             return;
@@ -92,7 +120,7 @@ public class BST {
     }
 
 
-    public void preOrderTraversal(BST tree) {
+    public void preOrderTraversal() {
         traversal(root);
     }
 
@@ -107,6 +135,24 @@ public class BST {
 
     public void display(){
         display(root, "Root Node : ");
+    }
+
+
+    public boolean searchNode(Node node, int key) {
+        if (node == null){
+            return false;
+        }
+
+        if (node.value == key){
+            return true;
+        }
+        if (key < node.value){
+            return searchNode(node.left, key);
+        }
+        if (key > node.value){
+            return searchNode(node.right, key);
+        }
+        return false;
     }
 
     private void display(Node node, String details) {
