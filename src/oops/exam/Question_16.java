@@ -16,7 +16,7 @@ class Question_16{
 
 }
 
-class Main {
+class Q_16 {
     public static void main(String[] args) {
         Question_16 outer = new Question_16();
         PublicInterface publicInterface = outer.getInstance(); // upcasting into publicInterface

@@ -1,6 +1,6 @@
 package trees;
 
-public class BST {
+public class BST{
     
     class Node {
         private int value, height;
@@ -9,7 +9,7 @@ public class BST {
 
         Node (int value) {
             this.value = value;
-            height = 0;
+            this.height = 0;
         }
         public int getValue(){
             return this.value;
@@ -53,26 +53,36 @@ public class BST {
         return node;
     
     }
-    public void removeLeafNode(int value) {
-        // apply the post order traversal method
-        Node node = root;
-        
-        removeLeafNode(node, value);
+    public Node deleteInBST(Node node, int key) {
+        if (key < node.value){
+            node.left = deleteInBST(node.left, key);
+        }
+        else if (key > node.value ){
+            node.right = deleteInBST(node.right, key);
+        }
+        else {
+            // means that node is the key that we have to delete
+            if (node.left == null){
+                Node temp = node.right;
+                return temp;
+            }
+            else if (node.right == null){
+                Node temp = node.left;
+                return temp;
+            }
+            Node temp = inorderSuccessor(node.right);
+            node.value = temp.value;
+            node.right = deleteInBST(node.right, temp.value);
+        }
+        return node;
     }
 
-    private void removeLeafNode(Node node , int value) {
-        if (node == null){
-            return;
+    private Node inorderSuccessor(Node node) {
+        Node temp = node;
+        while (temp != null && temp.left != null){
+            temp = temp.left;
         }
-        if (node.left.value == value){
-            node.left = null;
-        }
-        else if (node.right.value == value){
-            node.right = null;
-        }
-        removeLeafNode(node.left , value);
-        removeLeafNode(node.right, value);
-        removeLeafNode(node.value);
+        return temp;
     }
 
 
@@ -125,6 +135,24 @@ public class BST {
 
     public void display(){
         display(root, "Root Node : ");
+    }
+
+
+    public boolean searchNode(Node node, int key) {
+        if (node == null){
+            return false;
+        }
+
+        if (node.value == key){
+            return true;
+        }
+        if (key < node.value){
+            return searchNode(node.left, key);
+        }
+        if (key > node.value){
+            return searchNode(node.right, key);
+        }
+        return false;
     }
 
     private void display(Node node, String details) {

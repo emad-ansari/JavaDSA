@@ -2,7 +2,6 @@ package oops.List;
 
 public class CircularLinkedList {
     private Node head;
-    private Node tail;
 
     private int size;
 
@@ -14,39 +13,39 @@ public class CircularLinkedList {
         Node node = new Node(value);
         node.next = head;
         if(head == null ){
-            tail = node;
             head = node;
+            node.next = head;
         }
-        tail.next = node;
-        tail = node;
+        else{
+            
+        }
+    
+    
         size++;
 
     }
 
-    public void insert(int after, int value){
-         Node node = new Node(value);
-         Node temp = head;
-         while (temp != tail){
-             if(temp.val == after){
-                 //then I have to insert the element
-                 node.next = temp.next;
-                 temp.next = node;
-                 size++;
-                 return;
-             }else{
-                 temp = temp.next;
-             }
-         }
-         if(temp.val == after){
-             // it means that I have to inset the value after tail
-             // so here it is same as inserting first element
-             insertFirst(value);
-         }
+    public void insert(int key, int value){
+        Node newNode = new Node(value);
+
+        if (head != null){
+            Node node = head;
+            while (node.next != head){
+                if (node.val == key){
+                    newNode.next = node.next;
+                    node.next = newNode;
+                    size++;
+                }
+            }
+        }
+        else {
+            System.out.println("key not found");
+        }
     }
 
 
     public void removeFirst(){
-        tail.next = head.next;
+    
         head = head.next;
         size--;
     }

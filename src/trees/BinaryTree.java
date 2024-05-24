@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class BinaryTree {
 
-    private class Node{
-        private int value;
-        private Node left;
-        private Node right;
+    class Node{
+        protected  int value;
+        protected Node left;
+        protected Node right;
 
         public Node(int value){
             this.value = value;
         }
     } 
 
-    private Node root;
-
+    protected Node root;
+    
     public void populate(Scanner scanner){
         System.out.print("Enter the root Node value: ");
         int rootValue = scanner.nextInt();
