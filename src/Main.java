@@ -1,16 +1,21 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
-        for (int i = 0; i < 10; ++i) {
-            System.out.print(i + " ");
-        }
+//        for (int i = 0; i < 10; i++) {
+//            System.out.print(i + " ");
+//        }
+//        System.out.println();
+//        for (int i = 0; i < 10; ++i) {
+//            System.out.print(i + " ");
+//        }
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the string: ");
+        String str = input.nextLine();
+        System.out.println("You Entered " + str + " string");
 
         // printPath(3, 3, "");
         // System.out.println(printPath1(3, 3, ""));
