@@ -3,8 +3,19 @@ package practice.exam;
 public class CustomDoublyLinkedList {
     private Node head;
     private int size;
-    CustomDoublyLinkedList(){
-        head = null;
+    private class Node {
+        private int value;
+        Node next;
+        Node prev;
+
+        private Node(int value){
+            this.value = value;
+        }
+    }
+
+    public CustomDoublyLinkedList(){
+        this.head = null;
+        this.size = 0;
     }
 
     public void insertFirst(int value) {
@@ -21,6 +32,9 @@ public class CustomDoublyLinkedList {
 
     public void insertLast(int value) {
         Node newNode = new Node(value);
+        if (this.head == null){
+            return;
+        }
         Node last = head;
 
         while (last.next != null){
@@ -36,8 +50,11 @@ public class CustomDoublyLinkedList {
     public void insert(int value, int index){
         Node newNode = new Node(value);
         if (head == null){return;}
+        if (index > this.size) {
+            System.out.println("Invalid Position!!");
+            return;
+        }
         Node temp = head;
-
         for (int i = 0; i < index - 1; i++) {
             temp = temp.next;
         }
@@ -82,17 +99,6 @@ public class CustomDoublyLinkedList {
 
     }
 
-
-    private class Node {
-        private int value;
-        Node next;
-        Node prev;
-
-        private Node(int value){
-            this.value = value;
-        }
-    }
-    
     public void display(){
         Node node = head;
         while (node != null){
@@ -101,6 +107,4 @@ public class CustomDoublyLinkedList {
         }
         System.out.println("NULL");
     }
-
-    
 }
