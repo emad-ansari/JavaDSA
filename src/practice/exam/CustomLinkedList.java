@@ -6,7 +6,7 @@ public class CustomLinkedList {
     public CustomLinkedList(){
         head = null;
     }
-    private class Node {
+    static private class Node {
         Node next;
         private int value;
 
@@ -58,6 +58,36 @@ public class CustomLinkedList {
             return;
         }
     }
+    public void insertAtPosition(int data, int position) {
+        // Create a new node with the given data
+        Node newNode = new Node(data);
+
+        // Case 1: Insert at the head
+        if (position == 0) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        // Traverse to the node before the desired position
+        Node current = head;
+        int currentIndex = 0;
+
+        while (current != null && currentIndex < position - 1) {
+            current = current.next;
+            currentIndex++;
+        }
+
+        // If position is invalid (greater than the list size)
+        if (current == null) {
+            System.out.println("Invalid position. Unable to insert.");
+            return;
+        }
+
+        // Case 2: Insert at the desired position
+        newNode.next = current.next;
+        current.next = newNode;
+    }
 
     public void removeByKey(int key){
         if (head != null){
@@ -68,7 +98,7 @@ public class CustomLinkedList {
                 prevNode = currentNode;
                 currentNode = currentNode.next;
             }
-            if (currentNode != null){
+            if (currentNode != null && prevNode != null){
                 prevNode.next = currentNode.next;
             }
             else {
@@ -120,11 +150,14 @@ public class CustomLinkedList {
     }
 
     public void removeEnd(){
-        if (head == null){
-            System.out.println("no element to remove");
+        if (head == null) {
+            System.out.println("Can Not Remove from Empty List.");
+            return;
         }
+        // if there is only first element.
         if (head.next == null){
-            head = head.next;
+            head = null;
+            return;
         }
 
         Node last = head;
@@ -145,24 +178,37 @@ public class CustomLinkedList {
     // }
 
     public Node reverseList() {
-
-        if (this.head.next == null){
-            return null;
+        if (head == null || head.next == null) {
+            return head; // Return the head as is if the list is empty or has only one node
         }
+
         Node prev = null;
-        Node current = this.head;
-        Node next = current.next;
-        while (current != null){
+        Node current = head;
+
+        while (current != null) {
+            Node next = current.next;
             current.next = prev;
             prev = current;
             current = next;
-            if (next != null){
-                next = next.next;
-            }
         }
 
-        return prev;
+        head = prev;
+        return head;
     }
+    public boolean hasCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public CustomLinkedList addTwoList(CustomLinkedList list1 , CustomLinkedList list2) {
         CustomLinkedList ans = new CustomLinkedList();
         Node head1 =  list1.reverseList();
@@ -221,8 +267,8 @@ public class CustomLinkedList {
         return value ;
     }
 
-    public void display(){
-        Node node = head;
+    public void display(Node start){
+        Node node = start;
         while (node != null){
             System.out.print(node.value + "-->");
             node = node.next;
@@ -233,26 +279,26 @@ public class CustomLinkedList {
     
 
     public static void main(String[] args) {
-        CustomLinkedList list = new CustomLinkedList();
-        list.addEnd(5);
-        list.addEnd(4);
-        list.addEnd(3);
-        list.addEnd(4);
-        list.addEnd(6);
-        list.addEnd(7);
+//        CustomLinkedList list = new CustomLinkedList();
+//        list.addEnd(5);
+//        list.addEnd(4);
+//        list.addEnd(3);
+//        list.addEnd(4);
+//        list.addEnd(6);
+//        list.addEnd(7);
 
-        list.display();
-        System.out.println("Second largest element is: " + list.findSecondLargest(list));
+//        list.display();
+//        System.out.println("Second largest element is: " + list.findSecondLargest(list));
 
-        // CustomLinkedList list2 = new CustomLinkedList();
+         CustomLinkedList list2 = new CustomLinkedList();
 
-        // list2.addEnd(4);
-        // list2.addEnd(8);
-        // list2.addEnd(3);
-        // list2.addEnd(1);
-        // list2.addEnd(5);
-
-        // list2.display();
+         list2.addEnd(4);
+         list2.addEnd(8);
+         list2.addEnd(3);
+         list2.addEnd(1);
+         list2.addEnd(5);
+         Node reverseListNode = list2.reverseList();
+         list2.display(reverseListNode);
 
         // CustomLinkedList ans = new CustomLinkedList();
         // ans = ans.addTwoList(list, list2);
