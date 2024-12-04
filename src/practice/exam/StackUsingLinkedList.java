@@ -2,7 +2,6 @@ package practice.exam;
 
 public class StackUsingLinkedList {
     private Node top;
- 
 
     private class Node {
         private int item;
@@ -13,22 +12,28 @@ public class StackUsingLinkedList {
     }
 
     StackUsingLinkedList() {
-        top = null;
+        this.top = null;
     }
 
     public void push(int item){
         Node newNode = new Node(item);
         newNode.next = top;
         top = newNode;
-        
     }
 
     public void pop(){
-        if (top == null){
+        if (isEmpty()){
             System.out.println("Can not delete from empty stack");
             return;
         }
         top = top.next;
+    }
+    private boolean isEmpty() {
+        return top == null;
+    }
+    public int peek() {
+        if (isEmpty()) return -1;
+        return top.item;
     }
 
     public void display(){
@@ -36,7 +41,6 @@ public class StackUsingLinkedList {
         while (node != null){
             System.out.print(node.item + " -> ");
             node = node.next;
-            
         }
         System.out.println("NULL");
     }
