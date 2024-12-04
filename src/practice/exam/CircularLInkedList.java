@@ -1,5 +1,7 @@
 package practice.exam;
 
+import oops.List.CircularLinkedList;
+
 public class CircularLInkedList {
     private int size;
     private Node head;
@@ -23,7 +25,7 @@ public class CircularLInkedList {
 
         if (head == null){
             head = newNode;
-            
+
         }
 
         newNode.next = head;
@@ -63,27 +65,17 @@ public class CircularLInkedList {
     
 
     public void remove(int key){
-        if (head == null){
-            System.out.println("List is empty");
-            return;
-        }
-        Node node = head;
+       Node node = head;
         do {
-            if (node.next.value == key){
-                if (node.next == head){
-                    node.next = head.next;
-                    head = head.next;
-                    size--;
-                    return;
-                }
-                Node temp = node.next;
-                node.next = temp.next;
-                size--;
-                return;
-            }
             node = node.next;
-    
-        }while (node != head);
+        }
+        while(node.next.value != key);
+
+        Node nextNode = node.next;
+        node.next = nextNode.next;
+        if(nextNode == head) {
+            head = nextNode.next;
+        }
     }
 
 

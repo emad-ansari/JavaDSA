@@ -1,5 +1,7 @@
 package oops.List;
 
+
+
 public class CircularLinkedList {
     private Node head;
 
@@ -10,17 +12,22 @@ public class CircularLinkedList {
     }
 
     public void insertFirst(int value){
-        Node node = new Node(value);
-        node.next = head;
-        if(head == null ){
-            head = node;
-            node.next = head;
+        Node newNode = new Node(value);
+
+        if (head == null){
+            head = newNode;
+
         }
-        else{
-            
-        }
-    
-    
+        newNode.next = head;
+        Node last = head;
+
+        do {
+            last = last.next;
+
+        }while(last.next != head);
+
+        last.next = newNode;
+        head = newNode;
         size++;
 
     }
@@ -51,29 +58,17 @@ public class CircularLinkedList {
     }
 
     public void remove(int key) {
-        Node temp = head;
-        if (temp == null){
-            System.out.println("list is empty");
-            return;
+        Node node = head;
+        do {
+            node = node.next;
         }
-        if(key == temp.val){
-            // just called the removeFirst
-            removeFirst();
-            return;
+        while(node.next.val != key);
+
+        Node nextNode = node.next;
+        node.next = nextNode.next;
+        if(nextNode == head) {
+            head = nextNode.next;
         }
-        do{
-            if(temp.next.val == key){
-                Node node = temp.next;
-                temp.next = node.next;
-                size--;
-                return;
-            }
-            else {
-                temp = temp.next;
-            }
-        }
-        while(temp.next != head);
-        System.out.println("Value does not exist");
     }
 
     public void display(){
@@ -93,5 +88,16 @@ public class CircularLinkedList {
         public Node(int val){
             this.val = val;
         }
+    }
+    public static void main(String[] args){
+        CircularLinkedList list = new CircularLinkedList();
+        list.insertFirst(10);
+        list.insertFirst(20);
+        list.insertFirst(30);
+        list.insertFirst(40);
+        list.display();
+        list.remove(20);
+        list.display();
+
     }
 }
